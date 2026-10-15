@@ -1,0 +1,14 @@
+include README.md LICENSE
+recursive-include docs *.md
+recursive-include tests *.py
+recursive-include scripts *.py
+global-exclude .env .env.* .envrc .pypirc .netrc
+global-exclude *.py[cod] *.log *.jsonl *.pem *.key *.crt *.cer *.p12 *.pfx *.flow
+global-exclude credentials*.json secrets*.json _debug_msg.txt .DS_Store
+include .env.example
+prune .git
+prune .venv
+prune venv
+prune env
+prune .vscode
+prune data

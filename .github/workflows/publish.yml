@@ -1,0 +1,91 @@
+name: Publish Python Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Package index to publish to
+        required: true
+        default: testpypi
+        type: choice
+        options:
+          - testpypi
+          - pypi
+      version:
+        description: Reviewed package version, matching pyproject.toml and sfx_olly/__init__.py
+        required: true
+        default: '0.1.0'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-${{ inputs.repository }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Test and Build Reviewed Source
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require the main branch
+        run: |
+          if [[ "$GITHUB_REF" != "refs/heads/main" ]]; then
+            echo 'Publishing is only allowed from the reviewed main branch.'
+            exit 1
+          fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install application and release tools
+        run: python -m pip install '.[publish]'
+      - name: Verify the reviewed version
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          python - <<'PY'
+          import os
+          from importlib.metadata import version
+          from sfx_olly import __version__
+
+          expected = os.environ["RELEASE_VERSION"]
+          if version("sfx-olly") != expected or __version__ != expected:
+              raise SystemExit("The requested version must match package metadata and __version__.")
+          PY
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Build distributions
+        run: python -m build
+      - name: Validate metadata
+        run: python -m twine check dist/*
+      - name: Reject private release content
+        run: python scripts/check_release.py
+      - name: Save reviewed distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    name: Publish to ${{ inputs.repository }}
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.repository }}
+      url: ${{ inputs.repository == 'pypi' && 'https://pypi.org/p/sfx-olly/' || 'https://test.pypi.org/p/sfx-olly/' }}
+    permissions:
+      id-token: write
+    steps:
+      - name: Download validated distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/
+      - name: Publish with Trusted Publishing
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: ${{ inputs.repository == 'pypi' && 'https://upload.pypi.org/legacy/' || 'https://test.pypi.org/legacy/' }}

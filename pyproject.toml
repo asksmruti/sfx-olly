@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sfx-olly"
+version = "0.1.0"
+description = "Splunk Observability Cloud (SignalFx) client, CLI and webhook receiver"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["observability", "signalfx", "metrics", "signalflow", "cli", "webhook"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "requests>=2.32",
+    "urllib3>=2.0",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+publish = ["build>=1.2", "twine>=6.1"]
+
+[project.urls]
+Homepage = "https://github.com/asksmruti/sfx-olly"
+Repository = "https://github.com/asksmruti/sfx-olly"
+Documentation = "https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md"
+Issues = "https://github.com/asksmruti/sfx-olly/issues"
+
+[project.scripts]
+sfx-olly = "sfx_olly.cli.main:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["sfx_olly*"]
+namespaces = false
