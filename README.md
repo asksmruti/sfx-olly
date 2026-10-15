@@ -1,5 +1,10 @@
 # sfx-olly
 
+[![CI](https://github.com/asksmruti/sfx-olly/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/asksmruti/sfx-olly/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://github.com/asksmruti/sfx-olly/blob/main/pyproject.toml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/asksmruti/sfx-olly/blob/main/LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-command%20guide-blue)](https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md)
+
 A Python CLI and library for Splunk Observability Cloud: discover metrics, query
 their values with SignalFlow, inspect detectors/incidents, and receive alert webhooks.
 
