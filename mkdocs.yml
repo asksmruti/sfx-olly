@@ -17,6 +17,13 @@ plugins:
           options:
             show_root_heading: true
 
+# Configures link validation to allow repo-relative links like ../README.md
+validation:
+  links:
+    not_found: warn
+    absolute_links: relative_to_docs
+    unrecognized_links: ignore
+
 nav:
   - Home: index.md
   - Architecture: architecture.md
