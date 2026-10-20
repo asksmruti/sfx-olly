@@ -171,6 +171,10 @@ sfx-olly incidents list                     # active only
 sfx-olly incidents list --include-resolved
 sfx-olly incidents get <incidentId>
 ```
+
+Singular aliases also work: `sfx-olly incident list` and `sfx-olly detector list`.
+Both forms support the same list/get options. A parser error happens before any
+API call; HTTP 401/403 instead means authentication/authorization needs attention.
 """,
     ),
     "webhook": (

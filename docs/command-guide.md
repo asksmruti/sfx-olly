@@ -715,6 +715,9 @@ Use `query` for dimension-labelled analytics and unit formatting.
 
 ### Detectors and incidents
 
+Both plural and singular command names work: `incidents` / `incident` and
+`detectors` / `detector`. They are aliases with identical list/get behavior.
+
 ```bash
 sfx-olly detectors list --name CPU --limit 20
 sfx-olly detectors list --tag production --limit 20
@@ -722,6 +725,8 @@ sfx-olly detectors get YOUR_DETECTOR_ID
 sfx-olly incidents list
 sfx-olly incidents list --include-resolved --limit 100
 sfx-olly incidents get YOUR_INCIDENT_ID
+sfx-olly incident list
+sfx-olly detector list --limit 20
 ```
 
 A detector is an alerting rule configuration. An incident is an occurrence of that

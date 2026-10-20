@@ -8,7 +8,7 @@ from sfx_olly.utils import ms_to_iso
 
 
 def register(sub: argparse._SubParsersAction) -> None:
-    detectors = sub.add_parser("detectors", help="List or inspect detectors")
+    detectors = sub.add_parser("detectors", aliases=["detector"], help="List or inspect detectors")
     actions = detectors.add_subparsers(dest="action", required=True, metavar="<action>")
     p = actions.add_parser("list", help="List detectors")
     p.add_argument("--name", help="filter by name (substring)")
@@ -20,7 +20,7 @@ def register(sub: argparse._SubParsersAction) -> None:
     p.add_argument("detector_id")
     p.set_defaults(handler=detectors_get)
 
-    incidents = sub.add_parser("incidents", help="List or inspect incidents (alerts)")
+    incidents = sub.add_parser("incidents", aliases=["incident"], help="List or inspect incidents (alerts)")
     actions = incidents.add_subparsers(dest="action", required=True, metavar="<action>")
     p = actions.add_parser("list", help="List incidents")
     p.add_argument("--include-resolved", action="store_true")
