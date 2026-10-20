@@ -1,0 +1,861 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asksmruti.github.io/sfx-olly/architecture/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../command-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Architecture - sfx-olly</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="sfx-olly" class="md-header__button md-logo" aria-label="sfx-olly" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sfx-olly
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asksmruti/sfx-olly" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sfx-olly" class="md-nav__button md-logo" aria-label="sfx-olly" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    sfx-olly
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asksmruti/sfx-olly" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metric-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-another-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Another Signal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metric-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-another-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Another Signal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="architecture">Architecture</h1>
+<h2 id="scope-and-boundaries">Scope and boundaries</h2>
+<p>The package currently supports metric discovery/queries, detectors/incidents, and receiving
+detector notifications. There is no watcher or metric-availability polling service.
+Use a Splunk-managed detector with webhook delivery for known-stream availability alerts;
+the receiver does not subscribe to a catalog of new metric names.</p>
+<p>Metric-specific implementations live in <code>sfx_olly/metrics/</code>. Shared authentication,
+HTTP pooling, retries, pagination, and errors stay separate so another signal can reuse
+them without importing metric query builders. No empty traces/logs packages are scaffolded.</p>
+<h2 id="query-flow">Query flow</h2>
+<pre><code class="language-mermaid">flowchart TD
+    Entry[CLI entry point or python -m sfx_olly] --&gt; Main[cli/main.py: parse and dispatch]
+    Main --&gt; Discover[cli/metadata.py: search or inspect]
+    Main --&gt; Query[cli/data.py: query]
+    Query --&gt; Builder[metrics/query_builder.py: MetricQuery to SignalFlow]
+    Builder --&gt; Dry{dry-run?}
+    Dry --&gt;|yes| Program[Print program and exit]
+    Dry --&gt;|no| Client[api/client.py: shared client]
+    Discover --&gt; Client
+    Client --&gt; Metadata[metrics/metadata.py]
+    Client --&gt; SignalFlow[metrics/signalflow.py]
+    Client --&gt; Raw[metrics/timeseries.py]
+    Metadata --&gt; HTTP[api/http.py: authenticated HTTPS]
+    SignalFlow --&gt; HTTP
+    Raw --&gt; HTTP
+    HTTP --&gt; Splunk[Splunk Observability APIs]
+    Splunk --&gt; Responses[JSON metadata or SSE query results]
+    Responses --&gt; Output[cli/output.py: tables or JSON; inspect uses a tree]
+    Config[config.py: env and .env] --&gt; Client
+    Config --&gt; Main
+</code></pre>
+<p><code>metrics inspect</code> issues one bounded MTS search and groups dimension values locally.
+<code>query</code> posts one program, consumes the finite historical SSE result, then exits.
+Explicit pagination in library iterators retrieves additional pages, not repeated checks
+waiting for new metrics. HTTP retries are bounded recovery from transient failures.</p>
+<h2 id="metric-mental-model">Metric mental model</h2>
+<pre><code class="language-text">metric: example.project.size
+  series A
+    dimensions: {environment: env-test, project.name: project-a, ...}
+    datapoints: [(timestamp, value), ...]
+  series B
+    dimensions: {environment: env-prod, project.name: project-b, ...}
+    datapoints: [(timestamp, value), ...]
+</code></pre>
+<p>A metric name is not a single number. Each distinct dimension set identifies a metric
+time series (MTS). Dots in keys are literal: <code>host.name</code> is one flat key, not a nested object.
+Dimension inspection groups values across series, not a Cartesian product of valid filters.
+Use MTS search to examine combinations. Global dimension search can return keys/values
+belonging to other metrics, so it is not a substitute for per-metric inspection.</p>
+<p>Metadata indicates indexed objects, not that samples exist in a selected time range.
+There is no exhaustive list of never-created metrics. Compare an explicit expected inventory
+with observed metadata, then query values separately when checking recent activity.</p>
+<h2 id="webhook-flow">Webhook flow</h2>
+<pre><code class="language-mermaid">flowchart LR
+    Detector[Splunk detector triggers or clears] --&gt;|HTTPS POST| App[webhook/app.py]
+    App --&gt; Checks[Size and content type; CIDR; HMAC signature]
+    Checks --&gt; Model[webhook/models.py: AlertPayload]
+    Model --&gt; Dedupe[webhook/security.py: replay guard]
+    Dedupe --&gt; Reply[HTTP accepted or duplicate]
+    Dedupe --&gt; Background[Background handlers for accepted alerts]
+    Background --&gt; Console[formatter.py and console handler]
+    Background --&gt; File[JSONL handler or custom sink]
+</code></pre>
+<p>This is an inbound notification path, independent of metric querying. HMAC uses
+<code>WEBHOOK_SHARED_SECRET</code>; outbound Splunk API requests use <code>SFX_TOKEN</code>. The receiver's
+background handlers and in-process replay guard are not a durable queue or global dedupe.</p>
+<h2 id="module-map">Module Map</h2>
+<p>All paths below are relative to <code>sfx_olly/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Responsibility and main links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__init__.py</code></td>
+<td>Package version and public <code>SplunkOllyClient</code> export.</td>
+</tr>
+<tr>
+<td><code>__main__.py</code></td>
+<td>Calls <code>cli.main.main</code> for <code>python -m sfx_olly</code>.</td>
+</tr>
+<tr>
+<td><code>config.py</code></td>
+<td>Validated API, logging, and webhook settings; secret discovery for redaction.</td>
+</tr>
+<tr>
+<td><code>exceptions.py</code></td>
+<td>Shared typed API/auth/rate-limit/SignalFlow failures caught by the CLI.</td>
+</tr>
+<tr>
+<td><code>logging_config.py</code></td>
+<td>Logging format and secret-redaction filter, installed by CLI startup.</td>
+</tr>
+<tr>
+<td><code>utils.py</code></td>
+<td>Duration parsing, epoch/UTC conversion, validation, and numeric display units.</td>
+</tr>
+<tr>
+<td><code>help.py</code></td>
+<td>Offline topic text rendered by <code>cli/help_cmd.py</code>.</td>
+</tr>
+<tr>
+<td><code>api/__init__.py</code></td>
+<td>Public API exports, including metric classes for existing callers.</td>
+</tr>
+<tr>
+<td><code>api/client.py</code></td>
+<td>Owns one transport and exposes metadata, timeseries, signalflow, alerts APIs.</td>
+</tr>
+<tr>
+<td><code>api/http.py</code></td>
+<td>Session pooling, token auth, TLS, timeouts, retries, request logging, HTTP errors.</td>
+</tr>
+<tr>
+<td><code>api/base.py</code></td>
+<td>Base API wiring, search syntax defaults, bounded search pagination.</td>
+</tr>
+<tr>
+<td><code>api/alerts.py</code></td>
+<td>REST calls for detector and incident metadata.</td>
+</tr>
+<tr>
+<td><code>metrics/__init__.py</code></td>
+<td>Public metric API classes, query specification, result/message types.</td>
+</tr>
+<tr>
+<td><code>metrics/metadata.py</code></td>
+<td>Metric/dimension/MTS search/get, pagination, and dimension inspection.</td>
+</tr>
+<tr>
+<td><code>metrics/query_builder.py</code></td>
+<td>Validates metric/filter/aggregation options and generates SignalFlow.</td>
+</tr>
+<tr>
+<td><code>metrics/signalflow.py</code></td>
+<td>POST execute, parse SSE, join metadata to samples, surface execution errors.</td>
+</tr>
+<tr>
+<td><code>metrics/timeseries.py</code></td>
+<td>Raw <code>/v1/timeserieswindow</code> queries without SignalFlow analytics.</td>
+</tr>
+<tr>
+<td><code>cli/__init__.py</code></td>
+<td>CLI package marker.</td>
+</tr>
+<tr>
+<td><code>cli/main.py</code></td>
+<td>Registers commands, configures logs, dispatches handlers, maps errors to exit codes.</td>
+</tr>
+<tr>
+<td><code>cli/metadata.py</code></td>
+<td>Metric/dimension/MTS commands and metric inspection tree/JSON.</td>
+</tr>
+<tr>
+<td><code>cli/data.py</code></td>
+<td>Query, raw timeseries, and custom SignalFlow commands; formats result series.</td>
+</tr>
+<tr>
+<td><code>cli/output.py</code></td>
+<td>Shared table/JSON rendering and stderr error output.</td>
+</tr>
+<tr>
+<td><code>cli/alerts.py</code></td>
+<td>Detector and incident list/get commands.</td>
+</tr>
+<tr>
+<td><code>cli/webhook.py</code></td>
+<td>Serve receiver, send signed test alerts, render saved alerts.</td>
+</tr>
+<tr>
+<td><code>cli/help_cmd.py</code></td>
+<td>Offline help command registration and dispatch.</td>
+</tr>
+<tr>
+<td><code>webhook/__init__.py</code></td>
+<td>Webhook package exports.</td>
+</tr>
+<tr>
+<td><code>webhook/app.py</code></td>
+<td>FastAPI factory, POST and health endpoints, validation/dispatch pipeline.</td>
+</tr>
+<tr>
+<td><code>webhook/models.py</code></td>
+<td>Payload validation/normalization and incident state properties.</td>
+</tr>
+<tr>
+<td><code>webhook/security.py</code></td>
+<td>HMAC signing/verification, IP checks, replay protection.</td>
+</tr>
+<tr>
+<td><code>webhook/formatter.py</code></td>
+<td>Terminal-safe alert text and Rich alert layout.</td>
+</tr>
+<tr>
+<td><code>webhook/handlers.py</code></td>
+<td>Handler protocol plus console and restrictive-permission JSONL sinks.</td>
+</tr>
+<tr>
+<td><code>webhook/server.py</code></td>
+<td>Uvicorn startup using webhook host/TLS/proxy settings.</td>
+</tr>
+<tr>
+<td><code>webhook/testing.py</code></td>
+<td>Sample payload and signed HTTP sender for local tests.</td>
+</tr>
+</tbody>
+</table>
+<p><code>tests/test_metrics.py</code> contains offline metric/query/CLI regressions. <code>README.md</code> provides
+the quick start; <code>docs/reference.md</code> contains full configuration, cURL examples for both
+POST APIs, library usage, security, and troubleshooting.</p>
+<h2 id="adding-another-signal">Adding Another Signal</h2>
+<ol>
+<li>Create a signal-specific package such as <code>sfx_olly/traces/</code> only when implementing it.</li>
+<li>Check that signal's actual Splunk API, token permissions, query format, and retention.
+   Do not reuse metric <code>data()</code> or <code>/v2/metric</code> for raw traces or logs.</li>
+<li>Reuse <code>HttpTransport</code> and shared errors where compatible; add a specialized transport
+   only if the signal's protocol requires one.</li>
+<li>Attach its API object to <code>SplunkOllyClient</code> and register an independent CLI module.</li>
+<li>Add focused mocked tests and document the new signal's own filters and result model.</li>
+</ol>
+<p>The existing client attributes and <code>sfx_olly.api</code> exports remain supported. Direct imports
+from the former metric-specific API submodules must use the new <code>sfx_olly.metrics</code> paths.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2524 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asksmruti.github.io/sfx-olly/reference/">
+      
+      
+        <link rel="prev" href="../api/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Reference - sfx-olly</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="sfx-olly" class="md-header__button md-logo" aria-label="sfx-olly" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sfx-olly
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asksmruti/sfx-olly" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sfx-olly" class="md-nav__button md-logo" aria-label="sfx-olly" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    sfx-olly
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asksmruti/sfx-olly" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-settings-sfx_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API settings (SFX_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-log_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging (LOG_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-settings-webhook_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook settings (WEBHOOK_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-dimensions-and-mts-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics, dimensions and MTS metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-a-metric-and-its-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discover a metric and its dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-metrics-and-alternatives-to-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing metrics and alternatives to polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-metric-query-values-for-any-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic metric query (values for any metric)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metric-types-and-other-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric types and other signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-metadata-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More metadata examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw time series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SignalFlow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl-post-execute-the-same-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cURL POST: execute the same query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detectors-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detectors and incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook receiver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook receiver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-shared-secret-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing shared-secret error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-and-test-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Run and test locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-curl-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signed cURL testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-connect-splunk-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Connect Splunk Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-webhook-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end webhook test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-webhook-handler-slack-teams-example-telemetry-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a webhook handler (Slack, Teams, example telemetry, database...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-an-api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add an API endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-help-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a help topic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-has-data-but-the-filtered-query-is-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard has data but the filtered query is empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-regression-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local regression checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-settings-sfx_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API settings (SFX_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-log_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging (LOG_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-settings-webhook_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook settings (WEBHOOK_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-dimensions-and-mts-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics, dimensions and MTS metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-a-metric-and-its-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discover a metric and its dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-metrics-and-alternatives-to-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing metrics and alternatives to polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-metric-query-values-for-any-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic metric query (values for any metric)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metric-types-and-other-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric types and other signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-metadata-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More metadata examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw time series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SignalFlow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl-post-execute-the-same-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cURL POST: execute the same query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detectors-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detectors and incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook receiver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook receiver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-shared-secret-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing shared-secret error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-and-test-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Run and test locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-curl-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signed cURL testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-connect-splunk-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Connect Splunk Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-webhook-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end webhook test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-webhook-handler-slack-teams-example-telemetry-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a webhook handler (Slack, Teams, example telemetry, database...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-an-api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add an API endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-help-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a help topic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-has-data-but-the-filtered-query-is-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard has data but the filtered query is empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-regression-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local regression checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="user-reference">User Reference</h1>
+<p>A modular Python package to:</p>
+<ul>
+<li><strong>Query</strong> Splunk Observability Cloud (SignalFx) REST APIs: metrics, dimensions, MTS, raw time series, SignalFlow, detectors and incidents.</li>
+<li><strong>Receive</strong> detector alert <strong>webhooks</strong>, verify their signature, and <strong>display them formatted</strong> in the terminal (and optionally store them as JSON Lines).</li>
+<li>Use everything from a <strong>CLI</strong> (<code>sfx-olly</code>) or as a <strong>library</strong> in your own code.</li>
+</ul>
+<hr />
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#project-structure">Project structure</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#cli-usage">CLI usage</a></li>
+<li><a href="#webhook-receiver">Webhook receiver</a></li>
+<li><a href="#library-usage">Library usage</a></li>
+<li><a href="#extending">Extending</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#scaling">Scaling</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+<p>New to these options? Start with the <strong><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md">Command Guide</a></strong>.
+It explains metrics and dimensions, range versus resolution, rollup versus aggregation
+versus time transforms, every query option, and step-by-step project-size examples.</p>
+<p>All metric, project, host, topic, and environment values in the examples are fictional.
+For example, <code>example.project.size</code>, <code>example.bytes.total</code>, <code>project-demo</code>, and
+<code>env-test</code> are placeholders, not built-in metrics. Replace them with names discovered
+in your own organization. Never substitute real credentials into committed examples.</p>
+<hr />
+<h2 id="project-structure">Project structure</h2>
+<pre><code class="language-text">sfx_olly/
+├── __init__.py          # exports SplunkOllyClient
+├── __main__.py          # python -m sfx_olly
+├── config.py            # typed settings from env/.env (ApiSettings, WebhookSettings, LoggingSettings)
+├── exceptions.py        # ApiError, AuthenticationError, NotFoundError, RateLimitError, SignalFlowError
+├── logging_config.py    # text/JSON logging with secret redaction
+├── utils.py             # durations, time ranges, validation helpers
+├── help.py              # built-in help topics (sfx-olly help &lt;topic&gt;)
+├── api/
+│   ├── http.py          # shared HTTP transport: auth, TLS, retries, error mapping
+│   ├── base.py          # BaseAPI + pagination
+│   ├── alerts.py        # detectors, incidents
+│   └── client.py        # SplunkOllyClient facade
+├── metrics/
+│   ├── __init__.py      # public metric API exports
+│   ├── metadata.py      # metric/MTS search and dimension inspection
+│   ├── timeseries.py    # /v1/timeserieswindow
+│   ├── query_builder.py # MetricQuery -&gt; safe SignalFlow program
+│   └── signalflow.py    # one-shot SignalFlow execution (SSE)
+├── webhook/
+│   ├── models.py        # AlertPayload (pydantic)
+│   ├── security.py      # HMAC signature, IP allowlist, replay guard
+│   ├── formatter.py     # rich terminal rendering
+│   ├── handlers.py      # pluggable sinks: console, JSONL file
+│   ├── app.py           # FastAPI app factory
+│   ├── server.py        # uvicorn runner
+│   └── testing.py       # signed sample alert sender
+└── cli/
+    ├── main.py          # argument parser + error handling
+    ├── output.py        # table / JSON output
+    ├── metadata.py      # metrics, dimensions, mts commands
+    ├── data.py          # query, timeseries, signalflow commands
+    ├── alerts.py        # detectors, incidents commands
+    ├── webhook.py       # webhook serve / send-test / render
+    └── help_cmd.py      # help command
+</code></pre>
+<p>Each layer only depends on the one below it: <strong>CLI → API/Webhook → config/utils</strong>. You can reuse the API or webhook modules without the CLI.</p>
+<p>See <a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/architecture.md">Architecture</a> for every module's responsibility, call flows,
+and the plan for adding traces or other signals without mixing their APIs with metrics.
+Metric-specific imports now live in <code>sfx_olly.metrics</code>; existing <code>from sfx_olly.api import MetricQuery</code>
+and <code>client.metadata</code> / <code>client.signalflow</code> / <code>client.timeseries</code> still work.
+Direct imports such as <code>sfx_olly.api.query_builder</code> must change to <code>sfx_olly.metrics.query_builder</code>.</p>
+<p>There is no watcher, local polling loop, state baseline, or <code>WATCH_*</code> configuration.
+Each discovery/query command runs once and exits. SSE delivers one query's results;
+it is not repeated polling for a metric to appear.</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<p>Requires <strong>Python 3.10+</strong>.</p>
+<pre><code class="language-bash">cd signalfx-playground
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .                 # installs the `sfx-olly` command
+# or: pip install -r requirements.txt   (then use `python -m sfx_olly`)
+</code></pre>
+<hr />
+<h2 id="configuration">Configuration</h2>
+<p>All configuration is external. Values are read from <strong>environment variables</strong>, or from a <strong><code>.env</code></strong> file in the working directory. Real environment variables take precedence over <code>.env</code>.</p>
+<pre><code class="language-bash">cp .env.example .env
+# edit .env: set SFX_TOKEN, SFX_REALM (and WEBHOOK_SHARED_SECRET for webhooks)
+</code></pre>
+<h3 id="api-settings-sfx_">API settings (<code>SFX_</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SFX_TOKEN</code></td>
+<td><strong>required</strong></td>
+<td>API access token (user API token or org token with API scope). Sent as <code>X-SF-Token</code>.</td>
+</tr>
+<tr>
+<td><code>SFX_REALM</code></td>
+<td><code>us1</code></td>
+<td>Your org realm: <code>us0</code>, <code>us1</code>, <code>us2</code>, <code>eu0</code>, <code>eu1</code>, <code>eu2</code>, <code>jp0</code>, <code>au0</code>...</td>
+</tr>
+<tr>
+<td><code>SFX_TIMEOUT_SECONDS</code></td>
+<td><code>30</code></td>
+<td>Per-request timeout.</td>
+</tr>
+<tr>
+<td><code>SFX_MAX_RETRIES</code></td>
+<td><code>3</code></td>
+<td>Retries on 429/500/502/503/504. Honours <code>Retry-After</code>.</td>
+</tr>
+<tr>
+<td><code>SFX_BACKOFF_FACTOR</code></td>
+<td><code>0.5</code></td>
+<td>Exponential backoff factor between retries.</td>
+</tr>
+<tr>
+<td><code>SFX_POOL_MAXSIZE</code></td>
+<td><code>10</code></td>
+<td>HTTP connection pool size.</td>
+</tr>
+<tr>
+<td><code>SFX_CA_BUNDLE</code></td>
+<td>–</td>
+<td>Path to a custom CA bundle (e.g. corporate TLS proxy).</td>
+</tr>
+<tr>
+<td><code>SFX_API_BASE_URL</code></td>
+<td>derived from realm</td>
+<td>Override API URL (must be <code>https://</code>).</td>
+</tr>
+<tr>
+<td><code>SFX_STREAM_BASE_URL</code></td>
+<td>derived from realm</td>
+<td>Override SignalFlow stream URL (must be <code>https://</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logging-log_">Logging (<code>LOG_</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOG_LEVEL</code></td>
+<td><code>INFO</code></td>
+<td><code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code></td>
+</tr>
+<tr>
+<td><code>LOG_FORMAT</code></td>
+<td><code>text</code></td>
+<td><code>text</code> or <code>json</code> (for log aggregation)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="webhook-settings-webhook_">Webhook settings (<code>WEBHOOK_</code>)</h3>
+<p>See <a href="#webhook-receiver">Webhook receiver</a>.</p>
+<hr />
+<h2 id="cli-usage">CLI usage</h2>
+<p>For detailed explanations and worked numeric examples, read the
+<a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md">beginner-friendly Command Guide</a>. In particular:</p>
+<ul>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#range-how-far-back-to-look">Range</a>: which historical period to query.</li>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#resolution-the-size-of-a-time-bucket">Resolution</a>: how finely to divide time.</li>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#rollup-samples-inside-one-bucket">Rollup</a>: combine one series' samples inside a bucket.</li>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#aggregation-combine-different-series">Aggregation</a>: combine different series at each timestamp.</li>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#grouping-one-answer-per-project-or-host">Grouping</a>: calculate separately per project or host.</li>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#transform-calculate-over-time">Transform</a>: calculate over a moving time window.</li>
+<li><a href="https://github.com/asksmruti/sfx-olly/blob/main/docs/command-guide.md#your-project-size-query-step-by-step">Your project-size query</a>: build and understand the command one step at a time.</li>
+</ul>
+<pre><code class="language-bash">sfx-olly --help                # all commands
+sfx-olly &lt;command&gt; -h          # options for one command
+sfx-olly help                  # list help topics
+sfx-olly help webhook          # detailed guide for one topic
+</code></pre>
+<p>Global options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o table</code> (default)</td>
+<td>Human-readable tables</td>
+</tr>
+<tr>
+<td><code>-o json</code></td>
+<td>Raw API JSON (pipe to <code>jq</code>)</td>
+</tr>
+<tr>
+<td><code>-v</code>, <code>--verbose</code></td>
+<td>Print each API endpoint (with query params), request body (e.g. SignalFlow) and response status/timing to stderr. The token is never printed. Put it before the command: <code>sfx-olly -v query ...</code></td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Show version</td>
+</tr>
+</tbody>
+</table>
+<h3 id="help-module">Help module</h3>
+<p>The built-in help works offline and needs no token:</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>quickstart</code></td>
+<td>Install, configure, first query</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>Environment variables</td>
+</tr>
+<tr>
+<td><code>metrics</code></td>
+<td>Metric / dimension / MTS search</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td>Fetch values of any metric (generic, no SignalFlow needed)</td>
+</tr>
+<tr>
+<td><code>timeseries</code></td>
+<td>Raw datapoints</td>
+</tr>
+<tr>
+<td><code>signalflow</code></td>
+<td>SignalFlow programs</td>
+</tr>
+<tr>
+<td><code>alerts</code></td>
+<td>Detectors and incidents</td>
+</tr>
+<tr>
+<td><code>webhook</code></td>
+<td>Webhook receiver setup</td>
+</tr>
+<tr>
+<td><code>security</code></td>
+<td>Security controls</td>
+</tr>
+<tr>
+<td><code>library</code></td>
+<td>Using the package from Python</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">sfx-olly help signalflow
+</code></pre>
+<h3 id="metrics-dimensions-and-mts-metadata">Metrics, dimensions and MTS metadata</h3>
+<p>These commands return <strong>metadata</strong> (names, types, dimensions), not values. Search endpoints use <code>field:value</code> syntax. A bare term gets a default field added: <code>metrics</code> uses <code>name:</code>, <code>dimensions</code> uses <code>key:</code>, and <code>mts</code>/<code>timeseries</code> use <code>sf_metric:</code>.</p>
+<pre><code class="language-bash">sfx-olly metrics search example.bytes.total          # = name:example.bytes.total
+sfx-olly metrics search &quot;example.*&quot; --limit 20
+sfx-olly mts search &quot;sf_metric:example.bytes.total AND environment:env-prod&quot;
+</code></pre>
+<h3 id="discover-a-metric-and-its-dimensions">Discover a metric and its dimensions</h3>
+<pre><code class="language-bash">sfx-olly metrics search                         # indexed metric names (first 50)
+sfx-olly metrics search 'example.*' --limit 100
+sfx-olly metrics get example.project.size            # metric metadata, including type
+sfx-olly metrics inspect example.project.size        # dimension keys -&gt; observed values
+sfx-olly -o json metrics inspect example.project.size
+sfx-olly mts search 'sf_metric:example.project.size AND environment:env-test'
+</code></pre>
+<p><code>inspect</code> reads at most 1,000 series by default, once. Increase <code>--limit</code> up to 10,000.
+It labels partial inventories; a value missing from a partial inventory is not proof of absence.
+The tree shows 10 values per key; JSON includes all values from the inspected series.
+Use <code>--offset</code> / <code>--limit</code> on searches to view subsequent pages (offset + limit &lt;= 10,000).</p>
+<p>Think <strong>metric name -&gt; series -&gt; dimension key/value set -&gt; timestamped values</strong>.
+Dimensions are actually a flat map: <code>environment</code> and <code>deployment.environment.name</code>
+are distinct literal keys, not aliases or nested objects. The tree groups observed values
+for readability; it does not imply that every combination of values exists.
+Use <code>mts search</code> to see the dimensions that occur together on each series.</p>
+<h3 id="missing-metrics-and-alternatives-to-polling">Missing metrics and alternatives to polling</h3>
+<p>An API cannot list names that have never been sent: there is no inventory of all possible
+future metrics. Compare an expected-name list from your application/collector configuration
+against <code>metrics search</code> results to identify missing expected names. Search/get are one-shot checks:</p>
+<pre><code class="language-bash">sfx-olly metrics search 'name:expected.metric.name'
+sfx-olly mts search 'sf_metric:expected.metric.name'
+sfx-olly query expected.metric.name --range 2d --latest
+</code></pre>
+<p>These answer different questions: indexed name, indexed series, and values within a time window.
+A retained metadata entry does not mean a metric is reporting now. No datapoints can also mean
+a wrong filter, time range, realm/org, token visibility, or rollup. It does not establish that
+the metric never existed. There is no <code>metrics search --unavailable</code> catalog.</p>
+<p>For notification without a local watcher, configure a <strong>Splunk-managed detector</strong> on a known
+metric/heartbeat and send its alerts to this package's webhook receiver. Use a no-data condition
+for a stream that stops reporting, or an appropriate presence/value condition for a known stream
+that starts reporting. A zero value may be valid, so do not equate zero with absence.
+For arbitrary new metric names, a detector/webhook is not a general metric-catalog change feed;
+the producer/collector must emit an explicit registration/event if you need that behavior
+without catalog polling. The receiver alone cannot detect new metric names.</p>
+<h3 id="generic-metric-query-values-for-any-metric">Generic metric query (values for any metric)</h3>
+<p><code>query</code> turns options into a SignalFlow program, runs it, and prints the results. This is the generic way to get the values of any metric.</p>
+<pre><code class="language-bash">sfx-olly query example.bytes.total
+sfx-olly query example.bytes.total --filter environment=env-prod --filter 'topic=*' --agg mean
+sfx-olly query example.bytes.total --rollup delta --agg sum --by topic \
+    --transform sum --over 1d --range 1d --resolution 1h --latest
+sfx-olly query cpu.utilization --filter host=web-01,web-02 --exclude env=dev --agg max --by host --show-program
+sfx-olly query cpu.utilization --agg mean --dry-run        # print SignalFlow only
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--filter KEY=V[,V]</code></td>
+<td>Keep series whose dimension matches. Repeat the option for AND. Commas mean OR. <code>*</code> is a wildcard.</td>
+</tr>
+<tr>
+<td><code>--exclude KEY=V[,V]</code></td>
+<td>Drop series whose dimension matches.</td>
+</tr>
+<tr>
+<td><code>--rollup</code></td>
+<td>How raw points roll up: <code>average</code>, <code>sum</code>, <code>min</code>, <code>max</code>, <code>count</code>, <code>delta</code>, <code>rate</code>, <code>latest</code>, <code>lag</code></td>
+</tr>
+<tr>
+<td><code>--agg</code> / <code>--by DIM</code></td>
+<td>Aggregate across series (<code>mean</code>, <code>sum</code>, <code>min</code>, <code>max</code>, <code>count</code>, <code>median</code>, <code>stddev</code>, <code>variance</code>), optionally grouped by a dimension.</td>
+</tr>
+<tr>
+<td><code>--transform</code> / <code>--over</code></td>
+<td>Aggregate over a time window, e.g. <code>--transform sum --over 1d</code>.</td>
+</tr>
+<tr>
+<td><code>--range</code> / <code>--resolution</code></td>
+<td>Look-back window and data granularity.</td>
+</tr>
+<tr>
+<td><code>--latest</code></td>
+<td>Show only the latest value per series.</td>
+</tr>
+<tr>
+<td><code>--unit</code></td>
+<td>How values are displayed: <code>raw</code> (default), <code>bytes</code> (auto B/KiB/MiB/GiB), <code>kib</code>, <code>mib</code>, <code>gib</code>. Tables only; <code>-o json</code> stays raw.</td>
+</tr>
+<tr>
+<td><code>--show-program</code> / <code>--dry-run</code></td>
+<td>Print the generated SignalFlow (<code>--dry-run</code> doesn't call the API).</td>
+</tr>
+</tbody>
+</table>
+<p>The same thing from Python:</p>
+<pre><code class="language-python">from sfx_olly import SplunkOllyClient
+from sfx_olly.api import MetricQuery
+from sfx_olly.utils import time_range
+
+spec = MetricQuery(
+    metric=&quot;example.bytes.total&quot;,
+    filters={&quot;environment&quot;: [&quot;env-prod&quot;]},
+    rollup=&quot;delta&quot;, aggregation=&quot;sum&quot;, group_by=[&quot;topic&quot;],
+    transform=&quot;sum&quot;, window=&quot;1d&quot;,
+)
+start, end = time_range(&quot;1d&quot;)
+with SplunkOllyClient() as client:
+    for p in client.signalflow.query(spec, start, end, resolution_ms=3_600_000):
+        print(p.timestamp_ms, p.properties.get(&quot;topic&quot;), p.value)
+</code></pre>
+<p>The builder only accepts known functions and validated metric, dimension and window names. Filter values containing quotes, backslashes or control characters are rejected, so user input can't inject SignalFlow code.</p>
+<h3 id="metric-types-and-other-signals">Metric types and other signals</h3>
+<p>Nothing is hardcoded to example telemetry, project-size, CPU, or a specific environment. The same builder works
+with queryable numeric metric series and their actual dimension keys, subject to the input
+validation above and API permissions. It does <strong>not</strong> choose the correct metric semantics for you:</p>
+<table>
+<thead>
+<tr>
+<th>Metric representation</th>
+<th>Query guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gauge (size, temperature, utilization)</td>
+<td>Read values; choose average/min/max/latest rollup to match the chart.</td>
+</tr>
+<tr>
+<td>Counter / cumulative counter</td>
+<td>Choose delta or rate when appropriate to the source's counter semantics; match the dashboard. A sum of cumulative readings is usually not a total increase.</td>
+</tr>
+<tr>
+<td>Histogram / summary exported as numeric bucket, count, sum series</td>
+<td>Query the exported numeric series; bucket counts are not automatically percentiles.</td>
+</tr>
+<tr>
+<td>Native distribution or specialized analytics</td>
+<td>Not guaranteed by this simple numeric builder. Use supported custom SignalFlow or add a distribution-specific API after checking the metric format.</td>
+</tr>
+<tr>
+<td>APM-derived metrics</td>
+<td>Work if exposed as ordinary metrics in the metric catalog; use their actual dimension keys.</td>
+</tr>
+<tr>
+<td>Raw traces, logs, profiles, events</td>
+<td>Not metric datapoints. These need their own signal-specific API modules and are not implemented here.</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>--unit</code> flag only formats numbers; it does not infer whether a metric is bytes, a count,
+or a percentage. Do not use <code>--unit bytes</code> unless the source value is measured in bytes.</p>
+<h3 id="more-metadata-examples">More metadata examples</h3>
+<pre><code class="language-bash">sfx-olly metrics search &quot;name:cpu.*&quot; --limit 20
+sfx-olly metrics search &quot;name:*memory*&quot; --limit 50 --offset 50
+sfx-olly metrics get cpu.utilization
+sfx-olly dimensions search &quot;key:host&quot; --limit 100
+sfx-olly mts search &quot;sf_metric:cpu.utilization AND host:web-01&quot;
+sfx-olly -o json metrics search &quot;name:disk.*&quot; | jq '.results[].name'
+</code></pre>
+<h3 id="raw-time-series">Raw time series</h3>
+<pre><code class="language-bash">sfx-olly timeseries &quot;sf_metric:cpu.utilization&quot; --range 15m --resolution 1m
+sfx-olly timeseries &quot;sf_metric:cpu.utilization AND host:web-01&quot; --range 1h --resolution 5m --last 12
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--range</code></td>
+<td><code>15m</code></td>
+<td>Look-back window: <code>30s</code>, <code>15m</code>, <code>1h</code>, <code>7d</code>, <code>2w</code></td>
+</tr>
+<tr>
+<td><code>--resolution</code></td>
+<td><code>1m</code></td>
+<td>Rollup resolution</td>
+</tr>
+<tr>
+<td><code>--last</code></td>
+<td><code>5</code></td>
+<td>Points shown per series (table mode only)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="signalflow">SignalFlow</h3>
+<pre><code class="language-bash">sfx-olly signalflow &quot;data('cpu.utilization').mean(by=['host']).publish()&quot; --range 30m
+sfx-olly signalflow &quot;data('memory.utilization', filter=filter('env','prod')).max().publish()&quot; --range 1h --resolution 5m
+sfx-olly signalflow --file program.flow --range 1h
+</code></pre>
+<h3 id="curl-post-execute-the-same-query">cURL POST: execute the same query</h3>
+<p>This is the <strong>SignalFlow execute API</strong> used by <code>sfx-olly query</code>, not a metric-ingestion API
+or the local alert receiver. Export <code>SFX_TOKEN</code> and <code>SFX_REALM</code> in your shell first;
+cURL does not load <code>.env</code> automatically. Use an API-scoped token for the same org as the dashboard.
+The example assumes a fictional metric with an <code>environment</code> dimension:</p>
+<pre><code class="language-bash">export SFX_REALM=us1
+STOP_MS=&quot;$(($(date +%s) * 1000))&quot;
+START_MS=&quot;$((STOP_MS - 2 * 24 * 60 * 60 * 1000))&quot;
+curl --fail-with-body --no-buffer --request POST \
+    &quot;${SFX_STREAM_BASE_URL:-https://stream.${SFX_REALM}.signalfx.com}/v2/signalflow/execute?start=${START_MS}&amp;stop=${STOP_MS}&amp;resolution=60000&amp;immediate=true&quot; \
+    --header &quot;X-SF-Token: ${SFX_TOKEN:?Export SFX_TOKEN first}&quot; \
+    --header 'Content-Type: text/plain' \
+    --header 'Accept: text/event-stream' \
+    --data-binary &quot;data('example.project.size', filter=filter('environment', 'env-test')).publish(label='A')&quot;
+</code></pre>
+<p>The response is SSE (<code>event:</code> / <code>data:</code> blocks), not one JSON document. <code>start</code> and <code>stop</code>
+are Unix milliseconds. <code>immediate=true</code> returns available historical data without waiting
+for future samples. Do not use <code>-k</code> or <code>-L</code>; optionally supply <code>--cacert "$SFX_CA_BUNDLE"</code>
+for a corporate CA. See the <a href="https://dev.splunk.com/observability/reference/api/signalflow/latest">SignalFlow API reference</a>.
+For the separate inbound webhook POST, see <a href="#signed-curl-testing">signed cURL testing</a>.</p>
+<h3 id="detectors-and-incidents">Detectors and incidents</h3>
+<pre><code class="language-bash">sfx-olly detectors list --name &quot;CPU&quot; --limit 20
+sfx-olly detectors list --tag production
+sfx-olly detectors get &lt;detectorId&gt;
+sfx-olly incidents list
+sfx-olly incidents list --include-resolved --limit 100
+sfx-olly incidents get &lt;incidentId&gt;
+</code></pre>
+<h3 id="exit-codes">Exit codes</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Success</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>API error (auth, not found, rate limit, server error)</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Invalid input or configuration</td>
+</tr>
+<tr>
+<td><code>130</code></td>
+<td>Interrupted (Ctrl+C)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="webhook-receiver">Webhook receiver</h2>
+<p>Splunk Observability can POST a JSON notification to your endpoint whenever a detector triggers or clears. The receiver checks each request, replies <code>200</code> straight away, and passes the alert to one or more <strong>handlers</strong>. By default the console handler shows it as a formatted panel.</p>
+<h3 id="1-configure">1. Configure</h3>
+<pre><code class="language-bash">python -c &quot;import secrets; print(secrets.token_urlsafe(32))&quot;   # generate secret
+</code></pre>
+<p>In <code>.env</code> in the project directory, replace the placeholder with the generated value:</p>
+<pre><code class="language-dotenv">WEBHOOK_SHARED_SECRET=&lt;generated value&gt;
+WEBHOOK_REQUIRE_SIGNATURE=true
+WEBHOOK_OUTPUT_FILE=./data/alerts.jsonl     # optional: also store alerts
+</code></pre>
+<p>Run <code>sfx-olly webhook serve</code> from that directory so it can find <code>.env</code>. Configure
+the same secret in Splunk's webhook integration. Do not share the secret or commit <code>.env</code>.</p>
+<h4 id="missing-shared-secret-error">Missing shared-secret error</h4>
+<p>If startup reports:</p>
+<pre><code class="language-text">WEBHOOK_SHARED_SECRET is required when WEBHOOK_REQUIRE_SIGNATURE=true
+</code></pre>
+<p>the receiver has no non-empty secret configured. Generate and set it as shown above,
+then start the receiver again. Keep signature verification enabled, especially when
+exposing the receiver through a public URL.</p>
+<p>Environment variables override <code>.env</code>. If the error persists after updating <code>.env</code>,
+an empty exported variable may be overriding it. Remove that shell override and restart:</p>
+<pre><code class="language-bash">unset WEBHOOK_SHARED_SECRET
+sfx-olly webhook serve
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WEBHOOK_HOST</code></td>
+<td><code>127.0.0.1</code></td>
+<td>Bind address. Use <code>0.0.0.0</code> inside containers.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_PORT</code></td>
+<td><code>8080</code></td>
+<td>Listen port.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_PATH</code></td>
+<td><code>/webhooks/splunk</code></td>
+<td>Endpoint path.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_WORKERS</code></td>
+<td><code>1</code></td>
+<td>Uvicorn worker processes.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_SHARED_SECRET</code></td>
+<td>–</td>
+<td>Must match the "Shared secret" in the Splunk integration.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_REQUIRE_SIGNATURE</code></td>
+<td><code>true</code></td>
+<td>Refuse to start without a secret. Set <code>false</code> only for local experiments.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_MAX_BODY_BYTES</code></td>
+<td><code>262144</code></td>
+<td>Reject larger bodies with <code>413</code>.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_ALLOWED_CIDRS</code></td>
+<td>–</td>
+<td>Comma-separated source allowlist, e.g. <code>10.0.0.0/8,203.0.113.0/24</code>.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_TRUST_PROXY_HEADERS</code></td>
+<td><code>false</code></td>
+<td>Use <code>X-Forwarded-For</code> (only behind a trusted proxy).</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_FORWARDED_ALLOW_IPS</code></td>
+<td><code>127.0.0.1</code></td>
+<td>Proxy IPs whose forwarded headers are trusted.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_DEDUPE_TTL_SECONDS</code></td>
+<td><code>300</code></td>
+<td>Ignore repeated deliveries of the same event (<code>0</code> disables).</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_CONSOLE_OUTPUT</code></td>
+<td><code>true</code></td>
+<td>Print formatted alerts to stdout.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_OUTPUT_FILE</code></td>
+<td>–</td>
+<td>Append alerts as JSON Lines (file mode <code>0600</code>).</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_SSL_CERTFILE</code> / <code>WEBHOOK_SSL_KEYFILE</code></td>
+<td>–</td>
+<td>Serve HTTPS directly instead of via a proxy.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-run-and-test-locally">2. Run and test locally</h3>
+<pre><code class="language-bash"># terminal 1
+sfx-olly webhook serve
+
+# terminal 2 — send a signed sample alert
+sfx-olly webhook send-test
+sfx-olly webhook send-test --state ok
+sfx-olly webhook send-test --file my-payload.json
+</code></pre>
+<p><code>webhook serve</code> starts a listener that verifies, displays, and optionally saves incoming
+notifications. It does not create detectors or trigger alerts in Splunk.
+<code>webhook send-test</code> sends a synthetic <strong>Critical: CPU above 90% on web-01</strong> alert
+by default. That sample is not a real Splunk incident and need not match any detector
+you configured. Its incident ID starts with <code>TEST</code>.</p>
+<p>The default test URL is localhost, so a successful local test does not verify ngrok
+or Splunk delivery. Continue with the <a href="#end-to-end-webhook-test">end-to-end webhook test</a>.</p>
+<h3 id="signed-curl-testing">Signed cURL testing</h3>
+<p>For the <strong>local receiver API</strong>, start <code>sfx-olly webhook serve</code>, then export
+<code>WEBHOOK_SHARED_SECRET</code> in the calling shell with the same value as the receiver.
+Sign the exact body sent; this does not use <code>SFX_TOKEN</code>:</p>
+<pre><code class="language-bash">BODY='{&quot;incidentId&quot;:&quot;curl-test&quot;,&quot;status&quot;:&quot;anomalous&quot;,&quot;severity&quot;:&quot;Critical&quot;,&quot;detector&quot;:&quot;cURL test&quot;,&quot;messageTitle&quot;:&quot;Test alert&quot;}'
+SIGNATURE=&quot;$(printf '%s' &quot;$BODY&quot; | python -c 'import base64, hashlib, hmac, os, sys; print(base64.b64encode(hmac.new(os.environ[&quot;WEBHOOK_SHARED_SECRET&quot;].encode(), sys.stdin.buffer.read(), hashlib.sha256).digest()).decode())')&quot;
+curl --fail-with-body --request POST \
+    'http://127.0.0.1:8080/webhooks/splunk' \
+    --header 'Content-Type: application/json' \
+    --header &quot;X-SFX-Signature: $SIGNATURE&quot; \
+    --data-binary &quot;$BODY&quot;
+</code></pre>
+<p>Use your configured port/path if different. Local HTTP is for localhost testing only;
+the endpoint registered with Splunk must be public HTTPS. <code>sfx-olly webhook send-test</code>
+is the simpler alternative and reads <code>.env</code> automatically.</p>
+<p>Terminal 1 shows something like this:</p>
+<pre><code class="language-text">╭─  ANOMALOUS   Critical  Critical Alert: CPU above 90% on web-01 ────────────╮
+│ Detector      High CPU on web tier                                          │
+│ Rule          CPU above 90%                                                 │
+│ Metric        cpu.utilization                                               │
+│ Source        web-01                                                        │
+│ Time          2026-10-15T09:12:44+00:00                                     │
+│ Incident      TEST1A2B3C4D                                                  │
+│ Dimensions    env = prod                                                    │
+│               host = web-01                                                 │
+│ Inputs        A: 97.3  {&quot;host&quot;: &quot;web-01&quot;}                                   │
+│ Message       cpu.utilization has been above 90% for 5 minutes.             │
+│ Runbook       https://wiki.example.com/runbooks/cpu                         │
+╰─────────────────────────────────────────────────────────────────────────────╯
+</code></pre>
+<p>The panel is red while firing (<code>anomalous</code>) and green when cleared (<code>ok</code> / <code>manually resolved</code>).</p>
+<p>Re-render stored alerts later:</p>
+<pre><code class="language-bash">sfx-olly webhook render ./data/alerts.jsonl
+sfx-olly webhook render single-alert.json
+</code></pre>
+<h3 id="3-connect-splunk-observability">3. Connect Splunk Observability</h3>
+<p>Splunk only delivers to <strong>HTTPS (TLS 1.2+)</strong> URLs reachable from the internet. Typical options:</p>
+<ul>
+<li>A reverse proxy or ingress (nginx, Azure Application Gateway, Kubernetes ingress) that terminates TLS and forwards to the receiver.</li>
+<li><code>WEBHOOK_SSL_CERTFILE</code> / <code>WEBHOOK_SSL_KEYFILE</code> to serve TLS directly.</li>
+<li>For quick experiments only: a tunnel such as <code>ngrok http 8080</code>.</li>
+</ul>
+<p>Splunk cannot reach your laptop's <code>localhost</code> directly: that address refers to the
+machine making the request, not your laptop. For a local test, start
+<code>sfx-olly webhook serve</code>, then, in another terminal with ngrok installed and configured:</p>
+<pre><code class="language-bash">ngrok http 8080
+</code></pre>
+<p>Use the HTTPS forwarding address ngrok displays, followed by <code>/webhooks/splunk</code>,
+as the Splunk integration URL, for example <code>https://&lt;your-ngrok-address&gt;/webhooks/splunk</code>.
+Keep both processes running and your laptop awake; the tunnel URL may change when
+restarted. Only use a tunnel if your organization permits it. For production, deploy
+the receiver to an always-on server behind HTTPS instead of relying on your laptop.</p>
+<p>Then, in Splunk Observability:</p>
+<ol>
+<li><strong>Data Management → Add integration → Webhook → New integration</strong></li>
+<li><strong>URL</strong>: <code>https://&lt;your-host&gt;&lt;WEBHOOK_PATH&gt;</code></li>
+<li><strong>Method</strong>: <code>POST</code></li>
+<li><strong>Shared secret</strong>: same value as <code>WEBHOOK_SHARED_SECRET</code></li>
+<li>Save, then use <strong>Run test</strong> to send a test notification.</li>
+<li>Open a detector → <strong>Alert recipients → Add recipient → Webhook →</strong> your integration.</li>
+</ol>
+<p>Splunk signs every request with <code>X-SFX-Signature = base64(HMAC-SHA256(secret, body))</code>. The receiver rejects requests without a valid signature with <code>401</code>.</p>
+<h3 id="end-to-end-webhook-test">End-to-end webhook test</h3>
+<p>Keep <code>sfx-olly webhook serve</code> and <code>ngrok http 8080</code> running in separate terminals.
+If ngrok reports an unauthenticated session, <a href="https://dashboard.ngrok.com/signup">sign in or create an account</a>
+and run the dashboard's <code>ngrok config add-authtoken</code> command locally with your credential.
+The ngrok authtoken, <code>WEBHOOK_SHARED_SECRET</code>, and <code>SFX_TOKEN</code> are separate credentials;
+do not share them or commit them to source control.</p>
+<ol>
+<li>
+<p><strong>Local receiver:</strong> in a third terminal, run:</p>
+<p><code>bash
+sfx-olly webhook send-test</code></p>
+<p>Expect <code>HTTP 200</code> with <code>{"status":"accepted"}</code> and the synthetic critical alert
+in the receiver terminal. This tests only local delivery.</p>
+</li>
+<li>
+<p><strong>Public tunnel:</strong> replace <code>YOUR-NGROK-HOST</code> with the current HTTPS hostname shown
+    by ngrok, keeping the full endpoint path:</p>
+<p><code>bash
+sfx-olly webhook send-test \
+  --url "https://YOUR-NGROK-HOST/webhooks/splunk"</code></p>
+<p>Expect <code>HTTP 200</code> and another synthetic alert. This verifies the tunnel reaches
+the receiver, but still does not test Splunk's integration configuration.</p>
+</li>
+<li>
+<p><strong>Splunk delivery:</strong> set the integration URL to that same complete HTTPS URL,
+    set the same shared secret as the receiver, and send a test notification from Splunk.
+    Check the receiver terminal for the notification. Ensure the integration is selected
+    as your detector's alert recipient before expecting actual trigger/clear notifications.</p>
+</li>
+</ol>
+<p>If ngrok shows <strong>POST 404</strong>, open its local inspector at <code>http://127.0.0.1:4040</code>
+and inspect the failed request's path. With the default settings it must be exactly
+<code>/webhooks/splunk</code>, not <code>/</code>. Also check that ngrok forwards to port <code>8080</code> and Splunk
+uses the current tunnel hostname. Substitute your configured path/port if different.
+The receiver has no POST handler at the root URL.</p>
+<p>A <strong>401</strong> instead means the route was reached but signature verification failed;
+check that Splunk and the receiver use the same shared secret. Keep verification enabled.
+Do not use real secrets in screenshots or support messages; rotate any that were exposed.</p>
+<h3 id="http-responses">HTTP responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 {"status":"accepted"}</code></td>
+<td>Alert accepted and dispatched to handlers</td>
+</tr>
+<tr>
+<td><code>200 {"status":"duplicate"}</code></td>
+<td>Same incident/state/timestamp already seen within the dedupe TTL</td>
+</tr>
+<tr>
+<td><code>401</code></td>
+<td>Missing or invalid signature</td>
+</tr>
+<tr>
+<td><code>403</code></td>
+<td>Source IP not in <code>WEBHOOK_ALLOWED_CIDRS</code></td>
+</tr>
+<tr>
+<td><code>413</code></td>
+<td>Body larger than <code>WEBHOOK_MAX_BODY_BYTES</code></td>
+</tr>
+<tr>
+<td><code>415</code></td>
+<td>Content-Type is not <code>application/json</code></td>
+</tr>
+<tr>
+<td><code>422</code></td>
+<td>Body is not a valid alert JSON object</td>
+</tr>
+<tr>
+<td><code>GET /healthz</code> → <code>200</code></td>
+<td>Liveness/readiness probe</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="library-usage">Library usage</h2>
+<h3 id="api-client">API client</h3>
+<pre><code class="language-python">from sfx_olly import SplunkOllyClient
+from sfx_olly.exceptions import AuthenticationError, ApiError
+from sfx_olly.utils import time_range, parse_duration
+
+with SplunkOllyClient() as client:                       # reads SFX_* settings
+    # metadata
+    page = client.metadata.search_metrics(&quot;name:cpu.*&quot;, limit=50)
+    for metric in client.metadata.iter_metrics(&quot;name:*&quot;, max_items=2_000):   # auto-pagination
+        print(metric[&quot;name&quot;])
+
+    # raw datapoints
+    start, end = time_range(&quot;1h&quot;)
+    series = client.timeseries.window(&quot;sf_metric:cpu.utilization&quot;, start, end, parse_duration(&quot;5m&quot;))
+
+    # SignalFlow - collected results
+    points = client.signalflow.execute(
+        &quot;data('cpu.utilization').mean(by=['host']).publish()&quot;, start, end
+    )
+    for p in points:
+        print(p.timestamp_ms, p.properties.get(&quot;host&quot;), p.value)
+
+    # SignalFlow - raw streaming messages
+    for msg in client.signalflow.stream(&quot;data('cpu.utilization').publish()&quot;, start, end):
+        print(msg.event, msg.payload)
+
+    # alerts
+    detectors = client.alerts.list_detectors(name=&quot;CPU&quot;)
+    incidents = client.alerts.list_incidents(include_resolved=False)
+</code></pre>
+<p>Explicit settings (for example, several orgs in one process):</p>
+<pre><code class="language-python">from pydantic import SecretStr
+from sfx_olly.config import ApiSettings
+from sfx_olly import SplunkOllyClient
+
+eu = SplunkOllyClient(ApiSettings(token=SecretStr(eu_token), realm=&quot;eu0&quot;))
+us = SplunkOllyClient(ApiSettings(token=SecretStr(us_token), realm=&quot;us1&quot;))
+</code></pre>
+<p>Error handling:</p>
+<pre><code class="language-python">try:
+    client.metadata.get_metric(&quot;does.not.exist&quot;)
+except AuthenticationError:
+    ...  # 401/403
+except ApiError as exc:
+    print(exc.status_code, exc)
+</code></pre>
+<h3 id="webhook-components">Webhook components</h3>
+<pre><code class="language-python">from sfx_olly.webhook.models import AlertPayload
+from sfx_olly.webhook.formatter import render_alert
+from sfx_olly.webhook.security import verify_signature
+from rich.console import Console
+
+alert = AlertPayload.model_validate_json(raw_body)
+Console().print(render_alert(alert))
+ok = verify_signature(b&quot;my-secret&quot;, raw_body, headers[&quot;X-SFX-Signature&quot;])
+</code></pre>
+<hr />
+<h2 id="extending">Extending</h2>
+<h3 id="add-a-webhook-handler-slack-teams-example-telemetry-database">Add a webhook handler (Slack, Teams, example telemetry, database...)</h3>
+<p>Any object with a <code>handle(alert: AlertPayload) -&gt; None</code> method works as a handler. Handlers run after the <code>200</code> response has been sent, so a slow handler doesn't delay Splunk. If one handler fails, the error is logged and the other handlers still run.</p>
+<pre><code class="language-python"># my_app.py
+from sfx_olly.config import get_webhook_settings
+from sfx_olly.webhook.app import create_app
+from sfx_olly.webhook.handlers import ConsoleHandler, JsonlFileHandler
+from sfx_olly.webhook.models import AlertPayload
+
+
+class TeamsHandler:
+    def __init__(self, url: str) -&gt; None:
+        self.url = url
+
+    def handle(self, alert: AlertPayload) -&gt; None:
+        if alert.is_firing:
+            ...  # post to Teams
+
+
+settings = get_webhook_settings()
+app = create_app(settings, handlers=[ConsoleHandler(), TeamsHandler(&quot;https://...&quot;)])
+</code></pre>
+<pre><code class="language-bash">uvicorn my_app:app --host 127.0.0.1 --port 8080
+</code></pre>
+<h3 id="add-an-api-endpoint">Add an API endpoint</h3>
+<ol>
+<li>Add metric methods in <code>sfx_olly/metrics/</code>; keep shared transport and alert APIs in <code>sfx_olly/api/</code>. For traces or another signal, create a separate signal package with its own API class.</li>
+<li>Use <code>self._http.get_json(path, params)</code> or <code>self._http.request(...)</code>. Authentication, retries and errors are handled for you.</li>
+<li>If you created a new class, attach it in <code>SplunkOllyClient.__init__</code>.</li>
+<li>(Optional) Add a CLI command in <code>sfx_olly/cli/</code> with a <code>register(sub)</code> function, then add the module to <code>COMMAND_MODULES</code> in <code>cli/main.py</code>.</li>
+</ol>
+<h3 id="add-a-help-topic">Add a help topic</h3>
+<p>Add an entry to <code>TOPICS</code> in <code>sfx_olly/help.py</code>. It then shows up in <code>sfx-olly help</code> automatically.</p>
+<hr />
+<h2 id="security">Security</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Secrets</td>
+<td>Read only from env or <code>.env</code>. Held as <code>SecretStr</code> so they are never printed in reprs or config errors. Masked in every log line.</td>
+</tr>
+<tr>
+<td>Source control</td>
+<td><code>.env</code>, keys, certs and alert files are listed in <code>.gitignore</code>. Only <code>.env.example</code> is committed.</td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>HTTPS only (base URLs are validated). TLS verification is always on, with an optional custom CA bundle.</td>
+</tr>
+<tr>
+<td>Token leakage</td>
+<td>HTTP redirects are disabled, so the <code>X-SF-Token</code> header is never sent to another host.</td>
+</tr>
+<tr>
+<td>Input validation</td>
+<td>Realm checked against a pattern (blocks host injection / SSRF via realm). IDs checked against an allowlist pattern. Path segments URL-encoded. Query, program and file sizes bounded.</td>
+</tr>
+<tr>
+<td>Resilience</td>
+<td>Timeouts on every call. Bounded retries with exponential backoff that honour <code>Retry-After</code>.</td>
+</tr>
+<tr>
+<td>Error output</td>
+<td>API error bodies are truncated. Config errors never echo input values.</td>
+</tr>
+<tr>
+<td>Webhook auth</td>
+<td>HMAC-SHA256 signature check with constant-time comparison. A secret is mandatory by default.</td>
+</tr>
+<tr>
+<td>Webhook hardening</td>
+<td>Body size limit (streamed). Content-type check. Optional CIDR allowlist. Proxy headers trusted only from configured proxies. Replay de-duplication.</td>
+</tr>
+<tr>
+<td>Webhook surface</td>
+<td>No <code>/docs</code> or <code>/openapi.json</code>. No <code>Server</code> header. <code>nosniff</code> and <code>no-store</code> headers. Responses never echo the payload.</td>
+</tr>
+<tr>
+<td>Output safety</td>
+<td>Untrusted alert text has control and ANSI characters stripped and is length-limited before display. JSONL files are created with mode <code>0600</code>.</td>
+</tr>
+<tr>
+<td>Defaults</td>
+<td>Binds to <code>127.0.0.1</code>. Logs a warning when exposed without TLS or without signature checks.</td>
+</tr>
+</tbody>
+</table>
+<p>Production recommendations:</p>
+<ul>
+<li>Keep tokens in a secret manager (for example Azure Key Vault or Kubernetes secrets) and inject them as environment variables. Don't ship <code>.env</code> files to production.</li>
+<li>Use a token with the least privilege you need (an API token for reads only), and rotate tokens and the webhook secret regularly.</li>
+<li>Put the receiver behind TLS termination and a WAF or rate limiter.</li>
+<li>Run as a non-root user.</li>
+</ul>
+<hr />
+<h2 id="scaling">Scaling</h2>
+<ul>
+<li><strong>API client</strong>: one pooled <code>requests.Session</code> per client, with pool size set by <code>SFX_POOL_MAXSIZE</code>. <code>iter_metrics</code> / <code>iter_mts</code> page lazily, so large result sets don't need to fit in memory. <code>signalflow.stream()</code> processes results as they arrive.</li>
+<li><strong>Webhook receiver</strong>: stateless and async. Alerts are handed to background tasks so Splunk gets an immediate <code>200</code>. Raise <code>WEBHOOK_WORKERS</code>, or run several replicas behind a load balancer, and use <code>/healthz</code> for probes.</li>
+<li><strong>Multiple replicas</strong>: de-duplication is per process. For coordinated processing across replicas, add a handler that uses a shared store (Redis <code>SET NX EX</code>, or a database unique key on <code>incidentId|state|timestamp</code>), or publish to a durable queue and process downstream. A queue alone does not guarantee exactly-once delivery.</li>
+<li><strong>JSONL output</strong> is meant for single-host use. For multiple replicas, write to a shared sink through a custom handler.</li>
+</ul>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="dashboard-has-data-but-the-filtered-query-is-empty">Dashboard has data but the filtered query is empty</h3>
+<p>For example, this query will be empty if the selected series do not have that literal dimension key:</p>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter deployment.environment.name=env-test --range 2d
+</code></pre>
+<p>Suppose your series have <code>environment=env-test</code> but no
+<code>deployment.environment.name</code> dimension. These are different keys, so filtering by
+the missing key will not select those series. After inspecting your metric's actual
+dimensions, use the matching key:</p>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter environment=env-test --range 2d
+# compact display of the latest non-null result within that window per series:
+sfx-olly query example.project.size --filter environment=env-test --range 2d --latest
+</code></pre>
+<p>These commands are fictional examples, not guaranteed data sources. <code>--latest</code> can
+return an older sample inside the window; it does not prove current availability.
+Compare the dashboard's actual SignalFlow, filters, time window, resolution, rollup,
+and realm/org if differences remain. To investigate your metric:</p>
+<pre><code class="language-bash">sfx-olly metrics inspect example.project.size
+sfx-olly mts search 'sf_metric:example.project.size AND environment:env-test'
+sfx-olly query example.project.size --range 2d --latest
+sfx-olly query example.project.size --filter environment=env-test --range 2d --dry-run
+sfx-olly -v query example.project.size --filter environment=env-test --range 2d --latest
+</code></pre>
+<p>Do not guess aliases between <code>env</code>, <code>environment</code>, and <code>deployment.environment.name</code>.
+Sparse metrics may need a wider range; match the dashboard rather than inventing data
+with extrapolation. Aborted SignalFlow computations now raise errors instead of appearing empty.</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HTTP 400 ... Unsupported query syntax</code></td>
+<td>Search endpoints need <code>field:value</code> syntax. Bare terms are now prefixed automatically. To get metric <strong>values</strong>, use <code>sfx-olly query &lt;metric&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>Configuration error ... token: Field required</code></td>
+<td>Set <code>SFX_TOKEN</code> in <code>.env</code> or the environment.</td>
+</tr>
+<tr>
+<td><code>HTTP 401/403</code></td>
+<td>The token is invalid, expired, or an ingest-only token. Use an API-scoped token.</td>
+</tr>
+<tr>
+<td><code>invalid realm</code></td>
+<td>Use your org realm from <strong>Settings → Organization</strong> (e.g. <code>eu0</code>).</td>
+</tr>
+<tr>
+<td>SSL errors behind a corporate proxy</td>
+<td>Set <code>SFX_CA_BUNDLE</code> to the proxy CA file.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_SHARED_SECRET is required</code></td>
+<td>Set the secret, or set <code>WEBHOOK_REQUIRE_SIGNATURE=false</code> for local tests only.</td>
+</tr>
+<tr>
+<td>Webhook returns <code>401</code></td>
+<td>The secret in Splunk and <code>WEBHOOK_SHARED_SECRET</code> don't match.</td>
+</tr>
+<tr>
+<td>Webhook returns <code>403</code></td>
+<td>The caller IP isn't in <code>WEBHOOK_ALLOWED_CIDRS</code>. Behind a proxy, set <code>WEBHOOK_TRUST_PROXY_HEADERS=true</code> and <code>WEBHOOK_FORWARDED_ALLOW_IPS</code>.</td>
+</tr>
+<tr>
+<td>Need request details</td>
+<td>Set <code>LOG_LEVEL=DEBUG</code>. Tokens stay redacted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="local-regression-checks">Local regression checks</h3>
+<pre><code class="language-bash">python -m unittest discover -s tests -v
+</code></pre>
+<p>Tests use mocked API responses and do not need a token or access to Splunk.</p>
+<h2 id="license">License</h2>
+<p>Released under the <a href="https://github.com/asksmruti/sfx-olly/blob/main/LICENSE">MIT License</a>. Dependency licenses remain their owners'
+licenses. Confirm you have permission to publish the code and documentation before
+making an organization-developed project public.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

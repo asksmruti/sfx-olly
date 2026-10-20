@@ -1,0 +1,2608 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://asksmruti.github.io/sfx-olly/command-guide/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Command Guide - sfx-olly</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="sfx-olly" class="md-header__button md-logo" aria-label="sfx-olly" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sfx-olly
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asksmruti/sfx-olly" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sfx-olly" class="md-nav__button md-logo" aria-label="sfx-olly" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    sfx-olly
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asksmruti/sfx-olly" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-with-these-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start with these commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metric-dimension-series-and-datapoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric, dimension, series, and datapoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-a-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read a command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discover-names-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discover names and dimensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters-choose-the-right-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters: choose the right series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-how-far-back-to-look" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range: how far back to look
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-the-size-of-a-time-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution: the size of a time bucket
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollup-samples-inside-one-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollup: samples inside one bucket
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregation-combine-different-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregation: combine different series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping-one-answer-per-project-or-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping: one answer per project or host
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-calculate-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform: calculate over time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The order of operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauges-counters-and-choosing-a-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauges, counters, and choosing a calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units-timestamps-and-latest-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Units, timestamps, and latest values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-project-size-query-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your project-size query, step by step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your project-size query, step by step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-check-the-project-and-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Check the project and environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-inspect-historical-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Inspect historical values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-reduce-the-display-not-the-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Reduce the display, not the calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-add-a-calculation-only-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Add a calculation only if needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-understand-your-original-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Understand your original command
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes-by-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes by question
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recipes by question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-all-the-matching-projects-reporting-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are all the matching projects reporting individually?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-peak-reported-value-per-project-at-each-timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the peak reported value per project at each timestamp?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-byte-rate-per-topic-for-a-supported-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the byte rate per topic for a supported counter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-moving-peak-per-project-over-the-previous-hour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the moving peak per project over the previous hour?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-export-results-as-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I export results as JSON?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-inspect-the-request-without-querying-splunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I inspect the request without querying Splunk?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#every-query-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every query option
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discovery-option-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery option reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-signalflow-copied-from-the-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run SignalFlow copied from the UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-time-series-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw time-series window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detectors-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detectors and incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-receiver-and-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook receiver and tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offline-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#match-a-dashboard-and-troubleshoot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Match a dashboard and troubleshoot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-with-these-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start with these commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metric-dimension-series-and-datapoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric, dimension, series, and datapoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-a-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read a command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discover-names-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discover names and dimensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters-choose-the-right-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters: choose the right series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-how-far-back-to-look" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range: how far back to look
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-the-size-of-a-time-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution: the size of a time bucket
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollup-samples-inside-one-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollup: samples inside one bucket
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregation-combine-different-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregation: combine different series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping-one-answer-per-project-or-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping: one answer per project or host
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-calculate-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform: calculate over time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The order of operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauges-counters-and-choosing-a-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauges, counters, and choosing a calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units-timestamps-and-latest-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Units, timestamps, and latest values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-project-size-query-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your project-size query, step by step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your project-size query, step by step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-check-the-project-and-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Check the project and environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-inspect-historical-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Inspect historical values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-reduce-the-display-not-the-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Reduce the display, not the calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-add-a-calculation-only-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Add a calculation only if needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-understand-your-original-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Understand your original command
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes-by-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes by question
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recipes by question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-all-the-matching-projects-reporting-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are all the matching projects reporting individually?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-peak-reported-value-per-project-at-each-timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the peak reported value per project at each timestamp?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-byte-rate-per-topic-for-a-supported-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the byte rate per topic for a supported counter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-moving-peak-per-project-over-the-previous-hour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the moving peak per project over the previous hour?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-export-results-as-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I export results as JSON?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-inspect-the-request-without-querying-splunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I inspect the request without querying Splunk?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#every-query-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every query option
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discovery-option-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery option reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-signalflow-copied-from-the-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run SignalFlow copied from the UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-time-series-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw time-series window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detectors-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detectors and incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-receiver-and-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook receiver and tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offline-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#match-a-dashboard-and-troubleshoot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Match a dashboard and troubleshoot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="command-guide">Command Guide</h1>
+<p>Start here if metrics, dimensions, SignalFlow, or the command options are unfamiliar.
+Examples use fictional project-size metrics, but the commands work with other queryable numeric metrics.
+Names such as <code>example.project.size</code>, <code>example.bytes.total</code>, <code>project-demo</code>, and
+<code>env-test</code> are placeholders. Replace them with your own discovered metric/dimension
+values to return data. No organization-specific names or operational results are required.
+All numbers in the teaching tables are illustrative, not measurements from your system.</p>
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#start-with-these-commands">Start with these commands</a></li>
+<li><a href="#metric-dimension-series-and-datapoint">Metric, dimension, series, and datapoint</a></li>
+<li><a href="#read-a-command">Read a command</a></li>
+<li><a href="#discover-names-and-dimensions">Discover names and dimensions</a></li>
+<li><a href="#filters-choose-the-right-series">Filters: choose the right series</a></li>
+<li><a href="#range-how-far-back-to-look">Range: how far back to look</a></li>
+<li><a href="#resolution-the-size-of-a-time-bucket">Resolution: the size of a time bucket</a></li>
+<li><a href="#rollup-samples-inside-one-bucket">Rollup: samples inside one bucket</a></li>
+<li><a href="#aggregation-combine-different-series">Aggregation: combine different series</a></li>
+<li><a href="#grouping-one-answer-per-project-or-host">Grouping: one answer per project or host</a></li>
+<li><a href="#transform-calculate-over-time">Transform: calculate over time</a></li>
+<li><a href="#the-order-of-operations">The order of operations</a></li>
+<li><a href="#gauges-counters-and-choosing-a-calculation">Gauges, counters, and choosing a calculation</a></li>
+<li><a href="#units-timestamps-and-latest-values">Units, timestamps, and latest values</a></li>
+<li><a href="#your-project-size-query-step-by-step">Your project-size query, step by step</a></li>
+<li><a href="#recipes-by-question">Recipes by question</a></li>
+<li><a href="#every-query-option">Every query option</a></li>
+<li><a href="#other-commands">Other commands</a></li>
+<li><a href="#match-a-dashboard-and-troubleshoot">Match a dashboard and troubleshoot</a></li>
+<li><a href="#common-mistakes">Common mistakes</a></li>
+</ol>
+<h2 id="start-with-these-commands">Start with these commands</h2>
+<p>Complete the <a href="../README.md#installation">installation and configuration</a> first.
+Run commands from the project directory if your settings are in its <code>.env</code> file.
+Never paste your API token or webhook secret into a support message.</p>
+<pre><code class="language-bash"># Find metric names using a fictional example prefix.
+sfx-olly metrics search 'example.*'
+
+# Discover which dimension keys and values exist for this metric.
+sfx-olly metrics inspect example.project.size
+
+# Read one project's individual series, without aggregation.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --filter project.name=project-demo \
+  --range 1h --resolution 1m --unit kib
+</code></pre>
+<p>The last command assumes the metric's source values are bytes. It returns historical
+values, not a live subscription. If you only need the latest non-null value per series
+within that hour, append <code>--latest</code>. If the command returns no data, discover the
+dimensions first and then try a wider range; do not add aggregation to fix an empty filter.</p>
+<p>If <code>sfx-olly</code> is not found, replace it with <code>python -m sfx_olly</code>, using the Python
+environment in which the project dependencies are installed.</p>
+<h2 id="metric-dimension-series-and-datapoint">Metric, dimension, series, and datapoint</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Plain meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric</td>
+<td>The name of something being measured.</td>
+<td><code>example.project.size</code></td>
+</tr>
+<tr>
+<td>Dimension key</td>
+<td>A label that identifies which thing was measured.</td>
+<td><code>project.name</code>, <code>environment</code>, <code>host.name</code></td>
+</tr>
+<tr>
+<td>Dimension value</td>
+<td>The value of one of those labels.</td>
+<td><code>project-demo</code>, <code>env-test</code></td>
+</tr>
+<tr>
+<td>Metric time series (MTS)</td>
+<td>One metric plus a particular dimension set.</td>
+<td>Project A on host 1 in test</td>
+</tr>
+<tr>
+<td>Datapoint</td>
+<td>A value attached to a timestamp in a series.</td>
+<td>At 10:00 UTC, size was 102400 bytes</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Information describing metrics or series, not their numeric history.</td>
+<td>Metric type, description, dimension keys</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-text">Metric: example.project.size
+  Series 1: environment=test, project.name=A, host.name=host-1
+    10:00 -&gt; 100 KiB
+    10:01 -&gt; 120 KiB
+  Series 2: environment=test, project.name=A, host.name=host-2
+    10:00 -&gt; 200 KiB
+    10:01 -&gt; 220 KiB
+  Series 3: environment=test, project.name=B, host.name=host-1
+    10:00 -&gt;  50 KiB
+    10:01 -&gt;  60 KiB
+</code></pre>
+<p>One project can have several series because hosts or other dimensions differ.
+Filtering by project does not necessarily select just one series.</p>
+<p>Dimensions are a <strong>flat map</strong>, not nested folders. <code>deployment.environment.name</code>
+is a literal key; it is not the same key as <code>environment</code>, <code>env</code>, or <code>clusterName</code>.
+Names and values should be copied exactly from discovery results, including case.</p>
+<p>The inspection tree groups observed values for readability. It does not guarantee
+that every displayed project exists with every displayed host or environment.</p>
+<h2 id="read-a-command">Read a command</h2>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter environment=env-test --range 1h
+</code></pre>
+<p>Read it as: "Fetch values of <code>example.project.size</code>, keep series labelled
+<code>environment=env-test</code>, and look back one hour from now."</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sfx-olly</code></td>
+<td>Starts this tool.</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td>Selects the metric-values command.</td>
+</tr>
+<tr>
+<td><code>example.project.size</code></td>
+<td>Supplies the required metric name.</td>
+</tr>
+<tr>
+<td><code>--filter</code></td>
+<td>Introduces a dimension condition.</td>
+</tr>
+<tr>
+<td><code>--range</code></td>
+<td>Introduces the historical look-back period.</td>
+</tr>
+</tbody>
+</table>
+<p>In multiline examples, a final backslash continues the same shell command on the next
+line. Do not put spaces after that backslash. You can also enter the whole command
+on one line, without the backslashes.</p>
+<h2 id="discover-names-and-dimensions">Discover names and dimensions</h2>
+<pre><code class="language-bash"># First page of indexed metric names, not datapoint values.
+sfx-olly metrics search
+sfx-olly metrics search 'example.*' --limit 100
+
+# Metric metadata, including type when supplied by Splunk.
+sfx-olly metrics get example.project.size
+
+# A readable dimension tree for this metric.
+sfx-olly metrics inspect example.project.size
+
+# All observed values from the inspected series, in JSON.
+sfx-olly -o json metrics inspect example.project.size --limit 2000
+
+# Dimension combinations on individual series, not independent value lists.
+sfx-olly mts search 'sf_metric:example.project.size AND environment:env-test'
+
+# Global dimension search: may include dimensions from other metrics.
+sfx-olly dimensions search 'key:host.name' --limit 50
+</code></pre>
+<p><code>inspect</code> examines at most 1000 series by default, with a maximum of 10000.
+It labels partial inventories. The tree displays at most 10 values per key;
+JSON includes all values found in the inspected subset.</p>
+<p>Search commands return 50 results by default. <code>--limit 50 --offset 50</code> requests
+the next page after the first 50 results. Keep offset plus limit at or below 10000.
+<code>inspect</code> has <code>--limit</code> but no <code>--offset</code> option.</p>
+<p>There are two different syntaxes:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metrics search</code></td>
+<td>Metadata search expression</td>
+<td><code>'name:example.*'</code></td>
+</tr>
+<tr>
+<td><code>mts search</code> / <code>timeseries</code></td>
+<td>Series search expression</td>
+<td><code>'sf_metric:example.project.size AND environment:env-test'</code></td>
+</tr>
+<tr>
+<td><code>query --filter</code></td>
+<td>Dimension key equals value</td>
+<td><code>--filter environment=env-test</code></td>
+</tr>
+</tbody>
+</table>
+<p>Bare metric names in search commands get a default field automatically. Use quoted
+full search expressions for more complex conditions. A metric that was never ingested
+cannot be discovered by listing "unavailable" names; compare with an expected inventory.
+Indexed metadata can remain even when there are no recent samples.</p>
+<h2 id="filters-choose-the-right-series">Filters: choose the right series</h2>
+<p>Filters select input series before calculations. They do not change numeric values.</p>
+<pre><code class="language-bash"># Both conditions must match: environment AND project.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --filter project.name=project-demo
+
+# Either environment may match: test OR production.
+sfx-olly query example.project.size \
+  --filter environment=env-test,env-prod
+
+# Wildcard value: quote it to prevent shell wildcard expansion.
+sfx-olly query example.project.size --filter 'project.name=METRICS_*'
+
+# Keep test but exclude one project.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --exclude project.name=project-demo
+</code></pre>
+<p>Different included keys are combined with AND. Values for the same key are combined
+with OR, including when that key is repeated in multiple <code>--filter</code> options.
+<code>--exclude</code> removes matches; comma-separated values exclude any matching value.
+The convenience parser uses commas as separators, so a literal comma inside a
+dimension value needs custom SignalFlow rather than this option format.
+Quotes, backslashes, and control characters inside filter values are rejected by
+the builder. Shell quoting does not remove those builder restrictions.</p>
+<h2 id="range-how-far-back-to-look">Range: how far back to look</h2>
+<p><code>--range</code> answers: <strong>which historical period do I want?</strong></p>
+<p>The default is <code>15m</code>. <code>--range 1h</code> means from one hour ago until now, not "return
+one average for the hour" and not "keep running for an hour".</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Look back</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>30s</code></td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td><code>15m</code></td>
+<td>15 minutes</td>
+</tr>
+<tr>
+<td><code>1h</code></td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td><code>2d</code></td>
+<td>2 days</td>
+</tr>
+<tr>
+<td><code>1w</code></td>
+<td>1 week</td>
+</tr>
+</tbody>
+</table>
+<p>Durations use positive whole numbers with <code>s</code>, <code>m</code>, <code>h</code>, <code>d</code>, or <code>w</code>. There is no
+month unit; <code>m</code> always means minutes. Use <code>90m</code>, not <code>1.5h</code>. The CLI currently has
+no absolute <code>--start</code> / <code>--end</code> options. Separate runs have slightly different end
+times because each ends at its own current time.</p>
+<h2 id="resolution-the-size-of-a-time-bucket">Resolution: the size of a time bucket</h2>
+<p><code>--resolution</code> answers: <strong>how finely should time be represented?</strong></p>
+<p>The default is <code>1m</code>. Roughly speaking, <code>--range 1h --resolution 1m</code> asks for
+minute-sized buckets over an hour. It is not a request to wait a minute between
+HTTP calls. This tool does not poll for values.</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Approximate buckets per output series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--range 1h --resolution 1m</code></td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>--range 1h --resolution 5m</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>--range 1d --resolution 1h</code></td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+<p>These are intuition, not guaranteed row counts. Splunk can adjust the actual
+resolution based on retention and availability; boundary alignment, sparse samples,
+and calculations also affect output. A one-minute request cannot create one-minute
+data from a source that reports hourly. The supported requested interval is 1 second
+through 1 day, inclusive.</p>
+<p>Start with a resolution much smaller than your range and match the dashboard when
+comparing values. With <code>--range 1h --resolution 16h</code>, one requested bucket is larger
+than the entire requested period. Coarse, aligned buckets can be labelled outside
+the selected hour and are not directly comparable to a fine-resolution chart hover
+value. The CLI currently allows this combination; it does not automatically correct it.</p>
+<h2 id="rollup-samples-inside-one-bucket">Rollup: samples inside one bucket</h2>
+<p><code>--rollup</code> chooses how raw observations for <strong>each individual series</strong> are reduced
+to values at the requested resolution. If omitted, Splunk chooses its default
+based on the metric type; this CLI does not force <code>average</code> or <code>latest</code>.</p>
+<p>Suppose a size gauge reports 100, 120, and 140 KiB inside one five-minute bucket:</p>
+<table>
+<thead>
+<tr>
+<th>Rollup</th>
+<th>Result for this teaching example</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>average</code></td>
+<td>120 KiB</td>
+<td>Typical sampled size in the bucket.</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td>100 KiB</td>
+<td>Smallest sampled size.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>140 KiB</td>
+<td>Largest sampled size.</td>
+</tr>
+<tr>
+<td><code>latest</code></td>
+<td>140 KiB</td>
+<td>Last sample in the bucket.</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>360 KiB</td>
+<td>Sum of the readings, usually not meaningful as current project size.</td>
+</tr>
+<tr>
+<td><code>count</code></td>
+<td>3</td>
+<td>Number of samples, not number of hosts or projects.</td>
+</tr>
+</tbody>
+</table>
+<p>The table assumes all three samples are available and applicable to that rollup.
+Not every rollup is valid or meaningful for every source type. The CLI accepts these
+names, but Splunk ultimately decides whether a request is supported:</p>
+<table>
+<thead>
+<tr>
+<th>Rollup</th>
+<th>Use or caution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>average</code>, <code>min</code>, <code>max</code>, <code>latest</code></td>
+<td>Common gauge comparisons; choose the same one as the chart.</td>
+</tr>
+<tr>
+<td><code>sum</code>, <code>count</code></td>
+<td>Sum observations or count observations inside buckets; output meaning changes.</td>
+</tr>
+<tr>
+<td><code>delta</code></td>
+<td>Counter change/increment semantics; appropriate to supported counter data, not a generic way to subtract gauge endpoints.</td>
+</tr>
+<tr>
+<td><code>rate</code></td>
+<td>Counter activity per unit time, normally per second; verify source and API semantics.</td>
+</tr>
+<tr>
+<td><code>lag</code></td>
+<td>Specialized reporting-lag information, not the original metric magnitude; avoid for ordinary size comparisons.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># Largest observed project size in each requested five-minute bucket.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --filter project.name=project-demo \
+  --range 1h --resolution 5m --rollup max --unit kib
+</code></pre>
+<p>Do not choose <code>sum</code> just because a metric has "total" in its name. Inspect its type
+and the producer's definition first.</p>
+<h2 id="aggregation-combine-different-series">Aggregation: combine different series</h2>
+<p><code>--agg</code> answers: <strong>at each output timestamp, how should different matching series
+be combined?</strong> It does not add together all timestamps in the requested range.</p>
+<p>Without <code>--agg</code>, each matching series is returned separately.</p>
+<p>Suppose three independent inputs have values 100, 200, and 300 at the same timestamp:</p>
+<table>
+<thead>
+<tr>
+<th><code>--agg</code></th>
+<th>Result</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sum</code></td>
+<td>600</td>
+<td>Add the three inputs.</td>
+</tr>
+<tr>
+<td><code>mean</code></td>
+<td>200</td>
+<td>Arithmetic average of the inputs.</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td>100</td>
+<td>Smallest input.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>300</td>
+<td>Largest input.</td>
+</tr>
+<tr>
+<td><code>count</code></td>
+<td>3</td>
+<td>Number of contributing series values, not their sum.</td>
+</tr>
+<tr>
+<td><code>median</code></td>
+<td>200</td>
+<td>Middle input when sorted.</td>
+</tr>
+<tr>
+<td><code>stddev</code></td>
+<td>Spread, in the input's units</td>
+<td>Standard deviation; not a sum or typical value.</td>
+</tr>
+<tr>
+<td><code>variance</code></td>
+<td>Spread, in squared input units</td>
+<td>Variance; not a size in bytes or KiB.</td>
+</tr>
+</tbody>
+</table>
+<p>This example assumes three present inputs. Missing values, extrapolation in custom
+programs, and backend function rules can change which inputs contribute. Do not use
+these counts as a guaranteed inventory of configured hosts.</p>
+<pre><code class="language-bash"># Largest matching project-size series at each output timestamp.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --agg max --range 1h --resolution 1m --unit kib
+
+# Number of contributing series at each timestamp; leave the unit raw.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --agg count --range 1h --resolution 1m
+</code></pre>
+<p>Aggregation is a business decision, not just a display preference. Summing two hosts
+that report the same shared project size would double-count that size. Summing
+distinct independent contributions may be correct. Only the metric producer can
+establish whether the inputs are additive. Likewise, averaging percentages from
+unequal-capacity hosts is not necessarily a capacity-weighted utilization.</p>
+<p>With exactly one contributing series, sum/mean/min/max have the same value at
+that timestamp. <code>count</code> would still produce a count, not the original value.</p>
+<h2 id="grouping-one-answer-per-project-or-host">Grouping: one answer per project or host</h2>
+<p><code>--by</code> divides series into groups before applying <code>--agg</code>. It is not another filter.
+With no grouping, the aggregation combines all matching series into one result
+stream. With grouping, it produces a stream for each observed group.</p>
+<p>Using the three series from the earlier teaching example, at 10:00:</p>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No <code>--agg</code></td>
+<td>A/host-1=100, A/host-2=200, B/host-1=50</td>
+</tr>
+<tr>
+<td><code>--agg sum</code></td>
+<td>One combined result: 350</td>
+</tr>
+<tr>
+<td><code>--agg sum --by project.name</code></td>
+<td>A=300, B=50</td>
+</tr>
+<tr>
+<td><code>--agg sum --by host.name</code></td>
+<td>host-1=150, host-2=200</td>
+</tr>
+<tr>
+<td><code>--agg sum --by project.name --by host.name</code></td>
+<td>Separate results for each observed project/host pair</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># One total per project, if the underlying series are genuinely additive.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --agg sum --by project.name --range 1h --resolution 1m --unit kib
+</code></pre>
+<p>Use <code>--by</code> once per key: <code>--by project.name --by host.name</code>. A comma-separated
+<code>--by project.name,host.name</code> is not this CLI's grouping syntax.
+<code>--by</code> requires <code>--agg</code>; the builder rejects grouping on its own.
+Discover the key first and check series where the grouping dimension is missing.
+Grouping can remove the identity of individual input series, so inspect unaggregated
+results when you need to understand exactly which hosts contributed.</p>
+<h2 id="transform-calculate-over-time">Transform: calculate over time</h2>
+<p><code>--transform</code> plus <code>--over</code> answers: <strong>for each output series, how should values
+over a moving historical window be combined?</strong></p>
+<p>The window is evaluated at each output timestamp. It is not automatically one final
+answer for the entire <code>--range</code> and is not a calendar-day report.</p>
+<pre><code class="language-bash"># For each input series, show a moving one-hour average project size.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --range 6h --resolution 5m --transform mean --over 1h --unit kib
+
+# First choose the largest input at each timestamp, then its moving one-hour max.
+sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --agg max --range 6h --resolution 5m \
+  --transform max --over 1h --unit kib
+</code></pre>
+<p>For an illustrative sequence 100, 120, 140, a moving sum over a window containing
+all three values would be 360, while its moving mean would be 120. Summing size-gauge
+readings normally does not mean "current size" or "bytes transferred".</p>
+<p>Both options must be supplied together. The allowed function names are the same as
+the aggregation choices, but actual support and statistical/window behavior depend
+on SignalFlow. The window format here is a positive integer of at most five digits
+followed by lowercase <code>s</code>, <code>m</code>, <code>h</code>, <code>d</code>, or <code>w</code>. Use custom SignalFlow for calculations
+that need different ordering, calendar windows, weighting, or unsupported functions.
+Splunk may need history before the requested start to initialize a moving calculation;
+missing history can affect early outputs.</p>
+<h2 id="the-order-of-operations">The order of operations</h2>
+<pre><code class="language-text">Choose metric and matching dimension sets
+  -&gt; roll up each input series to the requested resolution
+  -&gt; aggregate across series, optionally grouped by dimension
+  -&gt; transform each resulting series over a moving time window
+  -&gt; publish results
+  -&gt; optionally display only the latest non-null point per output series
+  -&gt; format numbers for display
+</code></pre>
+<p><code>--range</code> determines the historical output period. <code>--resolution</code> controls the
+requested granularity; it is not a fourth aggregation function.</p>
+<p>These operations are not interchangeable. For example, "maximum host value over
+time" and "sum of each host's maximum" can differ because the hosts may peak at
+different timestamps. The builder's order is fixed. Inspect it without API access:</p>
+<pre><code class="language-bash">sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --rollup max --agg sum --by project.name \
+  --transform mean --over 1h --dry-run
+</code></pre>
+<p>The generated program is:</p>
+<pre><code class="language-python">data('example.project.size', filter=filter('environment', 'env-test'), rollup='max').sum(by=['project.name']).mean(over='1h').publish(label='A')
+</code></pre>
+<p>This is SignalFlow syntax, not a Python script to run with the Python interpreter.
+It means: within each bucket take each input's maximum; sum those values per project;
+then compute a moving one-hour mean for each resulting project stream.</p>
+<h2 id="gauges-counters-and-choosing-a-calculation">Gauges, counters, and choosing a calculation</h2>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Often represented as</th>
+<th>Starting approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current project size, temperature, utilization</td>
+<td>Gauge: value can rise or fall.</td>
+<td>Start without aggregation; match chart average/max/latest rollup.</td>
+</tr>
+<tr>
+<td>Events recorded per reporting interval</td>
+<td>Counter: interval increments.</td>
+<td>Check the metric definition and supported rollup; don't differentiate increments again.</td>
+</tr>
+<tr>
+<td>Lifetime bytes or requests</td>
+<td>Cumulative counter: generally rises, but can reset.</td>
+<td>Use a backend-supported change/rate calculation appropriate to the source.</td>
+</tr>
+<tr>
+<td>Histogram buckets or summaries</td>
+<td>Several numeric metrics or specialized distributions.</td>
+<td>Query numeric series carefully; do not assume bucket totals are percentiles.</td>
+</tr>
+</tbody>
+</table>
+<p>Metric names alone are insufficient. For these examples, assume <code>example.project.size</code>
+is a <strong>GAUGE</strong> reporting bytes. Check your real metric's type and confirm its unit
+from the collector/application before applying a byte display unit. Metadata may not
+specify a unit.</p>
+<p>For cumulative readings 1000, 1100, 1250, adding them gives 3350, not the increase.
+The simple endpoint increase is 250 if no reset occurred. Real counter queries also
+need to handle resets, sample timing, and the producer's metric conventions.</p>
+<table>
+<thead>
+<tr>
+<th>Your question</th>
+<th>Consider</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What did this one series report?</td>
+<td>No <code>--agg</code> or <code>--transform</code> initially.</td>
+</tr>
+<tr>
+<td>What is the largest independent input at each timestamp?</td>
+<td><code>--agg max</code></td>
+</tr>
+<tr>
+<td>What is the total of additive inputs per project?</td>
+<td><code>--agg sum --by project.name</code></td>
+</tr>
+<tr>
+<td>What is the typical value across equally weighted input series?</td>
+<td><code>--agg mean</code></td>
+</tr>
+<tr>
+<td>What is the average of each series over the previous hour?</td>
+<td><code>--transform mean --over 1h</code></td>
+</tr>
+<tr>
+<td>What was the largest raw reading within each time bucket?</td>
+<td><code>--rollup max</code></td>
+</tr>
+<tr>
+<td>What was the last available returned value per series?</td>
+<td><code>--latest</code>, a display selection rather than a calculation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="units-timestamps-and-latest-values">Units, timestamps, and latest values</h2>
+<p><code>--unit</code> affects table display only. It does not change the query, guess the metric's
+source unit, change timestamps, or make results equivalent to a dashboard calculation.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Behavior, assuming the source is bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--unit raw</code></td>
+<td>Print the numeric API value without byte conversion; default.</td>
+</tr>
+<tr>
+<td><code>--unit kib</code></td>
+<td>Divide by 1024 and display KiB.</td>
+</tr>
+<tr>
+<td><code>--unit mib</code></td>
+<td>Divide by 1048576 and display MiB.</td>
+</tr>
+<tr>
+<td><code>--unit gib</code></td>
+<td>Divide by 1073741824 and display GiB.</td>
+</tr>
+<tr>
+<td><code>--unit bytes</code></td>
+<td>Choose B, KiB, MiB, or GiB automatically based on magnitude.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, 114688 bytes = 112 KiB. Decimal kB uses a factor of 1000, not 1024;
+that difference is small and cannot explain a difference like 310 versus 112.
+If the source already reports KiB, dividing it by 1024 again would be incorrect.
+Use raw units for counts, percentages, and variance unless you explicitly know the
+intended conversion. JSON remains raw even when a display unit is requested.</p>
+<p>Output timestamps are UTC. Bucket timestamps represent a computation interval,
+not necessarily the exact arrival time of a raw sample. Check the dashboard timezone.</p>
+<p><code>--latest</code> selects the last non-null returned point for each output series. It does
+not select the maximum, fill gaps, or keep only one series overall. With a two-day
+range it can show a sample from yesterday. It does not prove the metric is reporting now.
+An actual zero value is retained and is not considered missing.</p>
+<h2 id="your-project-size-query-step-by-step">Your project-size query, step by step</h2>
+<p>Start without calculations, then add only the ones that answer your question.</p>
+<h3 id="step-1-check-the-project-and-environment">Step 1: Check the project and environment</h3>
+<pre><code class="language-bash">sfx-olly mts search 'sf_metric:example.project.size AND environment:env-test AND project.name:project-demo'
+</code></pre>
+<p>Look at how many series match and their full dimension sets. One project can have
+multiple hosts. Do not assume one series just because the filter names one project.</p>
+<h3 id="step-2-inspect-historical-values">Step 2: Inspect historical values</h3>
+<pre><code class="language-bash">sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --filter project.name=project-demo \
+  --range 1h --resolution 1m --unit kib
+</code></pre>
+<p>This does not specify a rollup, so Splunk chooses the metric's default. Compare
+actual timestamps and values, not just the last number on the screen.</p>
+<h3 id="step-3-reduce-the-display-not-the-calculation">Step 3: Reduce the display, not the calculation</h3>
+<pre><code class="language-bash">sfx-olly query example.project.size \
+  --filter environment=env-test \
+  --filter project.name=project-demo \
+  --range 1h --resolution 1m --unit kib --latest
+</code></pre>
+<h3 id="step-4-add-a-calculation-only-if-needed">Step 4: Add a calculation only if needed</h3>
+<p>If distinct additive inputs exist and the question is "total per project at each
+timestamp", add <code>--agg sum --by project.name</code>. If inputs are duplicate reports of the
+same shared size, sum is not correct. If you need no cross-series combination, leave
+both options off. Changing aggregation to force a match with the UI hides the cause.</p>
+<h3 id="step-5-understand-your-original-command">Step 5: Understand your original command</h3>
+<pre><code class="language-text">--filter environment=env-test       Select the test environment.
+--filter project.name=project-demo
+                                         Also select this exact project.
+--range 1h                               Ask for the preceding hour.
+--unit kib                               Display bytes divided by 1024.
+--agg sum --by project.name                  Sum matching inputs per project at each timestamp.
+--resolution 16h                         Ask for buckets much larger than that hour.
+</code></pre>
+<p>For illustration, a coarse bucket might show 300 KiB while a finer bucket shows
+120 KiB because they summarize different samples. Those teaching numbers are not
+results from your account. With one contributing series, sum and no aggregation
+match at the same timestamp; different bucket sizes can still produce different
+values. Compare the dashboard's exact timestamp, rollup, and resolution first.</p>
+<h2 id="recipes-by-question">Recipes by question</h2>
+<h3 id="what-are-all-the-matching-projects-reporting-individually">What are all the matching projects reporting individually?</h3>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter environment=env-test \
+  --range 2d --resolution 5m --unit kib --latest
+</code></pre>
+<p>This can still return multiple series for the same project. It does not merge hosts.</p>
+<h3 id="what-is-the-peak-reported-value-per-project-at-each-timestamp">What is the peak reported value per project at each timestamp?</h3>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter environment=env-test \
+  --agg max --by project.name --range 1d --resolution 5m --unit kib
+</code></pre>
+<p>This takes the maximum across input series per project at each bucket. It is not
+one maximum over the entire day. <code>--resolution 5m</code> may itself hide within-bucket
+peaks if the source/default rollup averages; add <code>--rollup max</code> only if that is the
+supported calculation you want.</p>
+<h3 id="what-is-the-byte-rate-per-topic-for-a-supported-counter">What is the byte rate per topic for a supported counter?</h3>
+<pre><code class="language-bash">sfx-olly query example.bytes.total \
+  --filter environment=env-prod \
+  --rollup rate --agg sum --by topic --range 1h --resolution 1m
+</code></pre>
+<p>Use this only after confirming the source is a counter for which Splunk's <code>rate</code>
+rollup has the intended semantics. A name ending in <code>total</code> is not sufficient proof.
+If the input counts bytes and the rate is per second, the result means bytes per
+second, not total bytes over the hour. It intentionally uses raw display units.
+Verify that producers are distinct contributions before summing them; duplicate
+reporters can double-count rates too. Counter resets and reporting intervals matter.</p>
+<h3 id="what-is-the-moving-peak-per-project-over-the-previous-hour">What is the moving peak per project over the previous hour?</h3>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter environment=env-test \
+  --rollup max --agg max --by project.name \
+  --transform max --over 1h --range 6h --resolution 5m --unit kib
+</code></pre>
+<p>This intentionally uses maximum at all three calculation stages. Each output point
+summarizes its preceding hour; there are still several output timestamps.</p>
+<h3 id="how-do-i-export-results-as-json">How do I export results as JSON?</h3>
+<pre><code class="language-bash">sfx-olly -o json query example.project.size \
+  --filter environment=env-test --range 1h --latest
+</code></pre>
+<p><code>-o json</code> is a global option and belongs before <code>query</code>. The JSON contains numeric
+values, timestamps in milliseconds, series IDs, and properties. Do not combine
+<code>--show-program</code> with JSON when you need stdout to contain only JSON: that option
+also prints the program to stdout. Use a separate <code>--dry-run</code> command instead.</p>
+<h3 id="how-do-i-inspect-the-request-without-querying-splunk">How do I inspect the request without querying Splunk?</h3>
+<pre><code class="language-bash">sfx-olly query example.project.size --filter environment=env-test \
+  --agg max --by project.name --dry-run
+</code></pre>
+<p><code>--dry-run</code> prints SignalFlow and makes no API call. It validates the builder inputs,
+but does not prove the metric exists or that Splunk supports the requested calculation.
+Range/resolution are request parameters, not part of the printed program; the dry-run
+path does not validate those parameters. For endpoint and request timing diagnostics:</p>
+<pre><code class="language-bash">sfx-olly -v query example.project.size --filter environment=env-test \
+  --range 1h --resolution 1m --latest
+</code></pre>
+<p>Verbose mode makes a real request and logs diagnostics to stderr. The token is
+redacted, but query text and business dimension values can still be sensitive.</p>
+<h2 id="every-query-option">Every query option</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>What to remember</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric name</td>
+<td>Required</td>
+<td>Numeric metric to fetch; wildcard patterns are allowed.</td>
+</tr>
+<tr>
+<td><code>--filter KEY=V[,V]</code></td>
+<td>None</td>
+<td>Keep matching dimensions; repeat for more keys.</td>
+</tr>
+<tr>
+<td><code>--exclude KEY=V[,V]</code></td>
+<td>None</td>
+<td>Remove matching dimensions.</td>
+</tr>
+<tr>
+<td><code>--range DURATION</code></td>
+<td><code>15m</code></td>
+<td>Historical output period ending now.</td>
+</tr>
+<tr>
+<td><code>--resolution DURATION</code></td>
+<td><code>1m</code></td>
+<td>Requested time-bucket interval, 1s through 1d.</td>
+</tr>
+<tr>
+<td><code>--rollup NAME</code></td>
+<td>Backend default</td>
+<td>Per-series treatment within a bucket.</td>
+</tr>
+<tr>
+<td><code>--agg NAME</code></td>
+<td>No aggregation</td>
+<td>Cross-series calculation at each timestamp.</td>
+</tr>
+<tr>
+<td><code>--by DIMENSION</code></td>
+<td>No grouping</td>
+<td>Requires <code>--agg</code>; repeat once per grouping key.</td>
+</tr>
+<tr>
+<td><code>--transform NAME</code></td>
+<td>No transform</td>
+<td>Moving time calculation; requires <code>--over</code>.</td>
+</tr>
+<tr>
+<td><code>--over DURATION</code></td>
+<td>None</td>
+<td>Moving window; requires <code>--transform</code>.</td>
+</tr>
+<tr>
+<td><code>--latest</code></td>
+<td>Off</td>
+<td>Display latest non-null point per output series in the window.</td>
+</tr>
+<tr>
+<td><code>--unit raw/bytes/kib/mib/gib</code></td>
+<td><code>raw</code></td>
+<td>Display formatting only; JSON stays raw.</td>
+</tr>
+<tr>
+<td><code>--label NAME</code></td>
+<td><code>A</code></td>
+<td>SignalFlow output label; does not filter input dimensions.</td>
+</tr>
+<tr>
+<td><code>--show-program</code></td>
+<td>Off</td>
+<td>Print generated SignalFlow, then execute it.</td>
+</tr>
+<tr>
+<td><code>--dry-run</code></td>
+<td>Off</td>
+<td>Print generated SignalFlow and exit without an API call.</td>
+</tr>
+<tr>
+<td><code>-h</code>, <code>--help</code></td>
+<td>Off</td>
+<td>Show this command's option summary.</td>
+</tr>
+</tbody>
+</table>
+<p>Aggregation and transform choices: <code>mean</code>, <code>sum</code>, <code>min</code>, <code>max</code>, <code>count</code>, <code>median</code>,
+<code>stddev</code>, <code>variance</code>. Rollup choices: <code>average</code>, <code>sum</code>, <code>min</code>, <code>max</code>, <code>count</code>, <code>delta</code>,
+<code>rate</code>, <code>latest</code>, <code>lag</code>. These are accepted builder names, not a guarantee of every
+function/source/window combination at the API.</p>
+<p>The naming difference is intentional: the rollup choice is <code>average</code>, while the
+cross-series aggregation and moving-transform choice is <code>mean</code>. For example,
+<code>--rollup average --agg mean</code> first averages samples per input bucket and then
+averages those resulting values across input series.</p>
+<p>Labels allow letters, digits, underscores, and hyphens, up to 64 characters. For
+dimension names, use those found by inspection; the convenience builder permits
+letters, digits, underscores, dots, colons, slashes, and hyphens (up to 128 characters).
+Other valid source names/values may require custom SignalFlow if this builder rejects them.</p>
+<p>Global options go before the command:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o table</code></td>
+<td>Default readable tables, or a tree for metric inspection.</td>
+</tr>
+<tr>
+<td><code>-o json</code></td>
+<td>Machine-readable results; <code>query</code> values stay raw.</td>
+</tr>
+<tr>
+<td><code>-v</code>, <code>--verbose</code></td>
+<td>Log requests and timings to stderr; not live polling.</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Show the installed toolkit version.</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>Show the command list.</td>
+</tr>
+</tbody>
+</table>
+<p><code>metrics get</code>, <code>detectors get</code>, and <code>incidents get</code> always print JSON.
+Global output selection does not turn the webhook
+receiver into a raw-JSON console stream; use its JSONL output file for saved payloads.</p>
+<h2 id="other-commands">Other commands</h2>
+<h3 id="discovery-option-reference">Discovery option reference</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Inputs and options</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metrics search</code></td>
+<td>Optional search text (default <code>*</code>); <code>--limit</code> (50), <code>--offset</code> (0).</td>
+<td>Indexed metric metadata, not samples.</td>
+</tr>
+<tr>
+<td><code>metrics get</code></td>
+<td>Required metric name.</td>
+<td>Full metric metadata as JSON.</td>
+</tr>
+<tr>
+<td><code>metrics inspect</code></td>
+<td>Required metric name; <code>--limit</code> (1000).</td>
+<td>Dimension tree or JSON; reports partial inventories.</td>
+</tr>
+<tr>
+<td><code>dimensions search</code></td>
+<td>Required search text; <code>--limit</code> (50), <code>--offset</code> (0).</td>
+<td>Global dimension metadata, not scoped to one metric.</td>
+</tr>
+<tr>
+<td><code>mts search</code></td>
+<td>Required search text; <code>--limit</code> (50), <code>--offset</code> (0).</td>
+<td>Individual matching series and their dimension combinations.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># Request the next 50 results, skipping the first page.
+sfx-olly metrics search 'example.*' --limit 50 --offset 50
+</code></pre>
+<h3 id="run-signalflow-copied-from-the-ui">Run SignalFlow copied from the UI</h3>
+<pre><code class="language-bash">sfx-olly signalflow &quot;data('cpu.utilization').mean(by=['host']).publish()&quot; \
+  --range 1h --resolution 1m
+sfx-olly signalflow --file chart.flow --range 1h --resolution 1m --unit kib
+</code></pre>
+<p>The file example assumes your copied program exists at that path. There is no
+reverse-conversion requirement: the tool sends the program directly to SignalFlow.
+Use either positional program text or <code>--file</code>, not both. File size is bounded at
+50000 bytes; the program text also has a length limit.</p>
+<p>The program must publish the desired output. Resolve UI-specific arguments and
+dashboard variables first; this CLI has no <code>--program-args</code> option. Keep only the
+intended enabled outputs. Custom SignalFlow may perform its own scaling, so check
+that you are not converting bytes to KiB twice. Supported display options are
+<code>--latest</code> and <code>--unit</code>; builder options such as <code>--agg</code> belong inside the custom
+program, not after <code>signalflow</code> on the command line.</p>
+<h3 id="raw-time-series-window">Raw time-series window</h3>
+<pre><code class="language-bash">sfx-olly timeseries 'sf_metric:example.project.size AND environment:env-test' \
+  --range 1h --resolution 5m --last 3
+</code></pre>
+<p><code>timeseries</code> uses a different raw-data API rather than generating SignalFlow.
+<code>--last 3</code> shows the last three returned points per series in table output; it does
+not reduce the fetched window. JSON still contains the complete response data.
+Its default <code>--last</code> is 5. This command has no <code>--unit</code>, <code>--agg</code>, or <code>--latest</code> option.
+Use <code>query</code> for dimension-labelled analytics and unit formatting.</p>
+<h3 id="detectors-and-incidents">Detectors and incidents</h3>
+<p>Both plural and singular command names work: <code>incidents</code> / <code>incident</code> and
+<code>detectors</code> / <code>detector</code>. They are aliases with identical list/get behavior.</p>
+<pre><code class="language-bash">sfx-olly detectors list --name CPU --limit 20
+sfx-olly detectors list --tag production --limit 20
+sfx-olly detectors get YOUR_DETECTOR_ID
+sfx-olly incidents list
+sfx-olly incidents list --include-resolved --limit 100
+sfx-olly incidents get YOUR_INCIDENT_ID
+sfx-olly incident list
+sfx-olly detector list --limit 20
+</code></pre>
+<p>A detector is an alerting rule configuration. An incident is an occurrence of that
+rule firing. These commands retrieve metadata; they do not create a detector or
+acknowledge an incident. Replace <code>YOUR_DETECTOR_ID</code> / <code>YOUR_INCIDENT_ID</code> with an ID
+returned by the respective list command; an ID is not the display name.</p>
+<table>
+<thead>
+<tr>
+<th>Option or input</th>
+<th>Applies to</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--name TEXT</code></td>
+<td><code>detectors list</code></td>
+<td>Name substring filter.</td>
+</tr>
+<tr>
+<td><code>--tag TAG</code></td>
+<td><code>detectors list</code></td>
+<td>Detector tag filter.</td>
+</tr>
+<tr>
+<td><code>--include-resolved</code></td>
+<td><code>incidents list</code></td>
+<td>Also request resolved incidents; default listing is active-only.</td>
+</tr>
+<tr>
+<td><code>--limit N</code></td>
+<td>Both list commands</td>
+<td>Max results for this request; default 50.</td>
+</tr>
+<tr>
+<td><code>--offset N</code></td>
+<td>Both list commands</td>
+<td>Number of results to skip; default 0.</td>
+</tr>
+<tr>
+<td>Required ID</td>
+<td>Both get commands</td>
+<td>Retrieve one detector/incident, printed as JSON.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="webhook-receiver-and-tests">Webhook receiver and tests</h3>
+<pre><code class="language-bash">sfx-olly webhook serve
+</code></pre>
+<p>Run the following in another terminal while the receiver stays running:</p>
+<pre><code class="language-bash">sfx-olly webhook send-test
+sfx-olly webhook send-test --state ok
+</code></pre>
+<p>Unlike historical queries, <code>webhook serve</code> is a long-running HTTP listener. It
+receives notifications, rather than polling Splunk. <code>send-test</code> creates a synthetic
+CPU critical alert, not a detector or a real incident in your Splunk organization.
+The two commands do not automatically subscribe you to every detector.</p>
+<p>Configure the shared secret, public HTTPS URL, and detector recipient using the
+<a href="../reference/#webhook-receiver">webhook setup</a> and
+<a href="../reference/#end-to-end-webhook-test">local/tunnel/Splunk test sequence</a>.
+Use <code>webhook render</code> to display saved JSON/JSONL alerts. Configure
+<code>WEBHOOK_OUTPUT_FILE</code> to preserve payloads; console output is a formatted summary.</p>
+<table>
+<thead>
+<tr>
+<th>Option or input</th>
+<th>Applies to</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--url URL</code></td>
+<td><code>webhook send-test</code></td>
+<td>Override the derived local URL, for example to test through ngrok. Include the webhook path.</td>
+</tr>
+<tr>
+<td><code>--file PATH</code></td>
+<td><code>webhook send-test</code></td>
+<td>Send your existing JSON payload file instead of generating the sample.</td>
+</tr>
+<tr>
+<td><code>--state STATE</code></td>
+<td><code>webhook send-test</code></td>
+<td>Sample state: <code>anomalous</code> (default), <code>ok</code>, <code>manually resolved</code>, or <code>stopped</code>. Quote values containing spaces.</td>
+</tr>
+<tr>
+<td><code>--insecure</code></td>
+<td><code>webhook send-test</code></td>
+<td>Skip TLS certificate verification for isolated self-signed local tests only. Do not use for ngrok or production.</td>
+</tr>
+<tr>
+<td>Required file path</td>
+<td><code>webhook render</code></td>
+<td>Read an existing <code>.json</code> or <code>.jsonl</code> alert file and display it. No API query.</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_*</code> settings</td>
+<td><code>webhook serve</code></td>
+<td>Configure secret, host, port, output, and security through env/.env, not <code>--port</code> or <code>--secret</code> CLI options.</td>
+</tr>
+</tbody>
+</table>
+<p><code>--state</code> controls the generated sample; it does not rewrite a supplied <code>--file</code>
+payload. Both file-based operations limit input file size to 50 MiB.</p>
+<pre><code class="language-bash">sfx-olly webhook send-test --state 'manually resolved'
+sfx-olly webhook send-test --file my-payload.json
+sfx-olly webhook render ./data/alerts.jsonl
+</code></pre>
+<p>The last two examples require those files to exist; the JSONL file is only created
+when file output is configured and notifications are received.</p>
+<h3 id="offline-help">Offline help</h3>
+<pre><code class="language-bash">sfx-olly help
+sfx-olly help query
+sfx-olly help signalflow
+sfx-olly query --help
+sfx-olly metrics inspect --help
+</code></pre>
+<p>Help and dry-run work without API credentials. Help text lists options; this guide
+explains which question each option answers and how the operations interact.</p>
+<h2 id="match-a-dashboard-and-troubleshoot">Match a dashboard and troubleshoot</h2>
+<p>Use this comparison sequence rather than changing several options at once:</p>
+<ol>
+<li>Confirm the same organization/realm and API permissions.</li>
+<li>Copy the metric and filter keys exactly; inspect series and dimension combinations.</li>
+<li>Match the chart's time range, UTC timestamps, and actual resolution. A chart hover
+   is one timestamp, not the latest sample from a later CLI execution.</li>
+<li>Compare the chart's rollup. An average bucket can differ from its maximum or last sample.</li>
+<li>Compare cross-series aggregation and grouping. Check for duplicate reporters.</li>
+<li>Compare time transforms, formulas, weighting, extrapolation, and unit conversion.</li>
+<li>Run the chart's actual SignalFlow if the simple builder cannot express its logic.</li>
+<li>Compare raw values before formatting; then apply the same display unit.</li>
+</ol>
+<p>No data does not mean zero, and it does not prove the metric never existed. Filters,
+range, sparse reporting, token visibility, and retained metadata are separate checks.
+Avoid automatic fill/extrapolation just to make a result resemble the UI.</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>First check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empty result</td>
+<td>Remove one filter at a time; inspect dimensions; widen range if appropriate.</td>
+</tr>
+<tr>
+<td>Number larger than UI</td>
+<td>Bucket size/rollup, summed duplicate series, transformations, units.</td>
+</tr>
+<tr>
+<td>Multiple rows for one project</td>
+<td>Other dimensions identify distinct series or multiple timestamps remain.</td>
+</tr>
+<tr>
+<td>One old row with <code>--latest</code></td>
+<td>It is the last available non-null point in the range, not necessarily current.</td>
+</tr>
+<tr>
+<td><code>--by</code> error</td>
+<td>Supply <code>--agg</code> and repeat <code>--by</code> separately for each key.</td>
+</tr>
+<tr>
+<td>Transform/window error</td>
+<td>Supply both <code>--transform</code> and <code>--over</code>.</td>
+</tr>
+<tr>
+<td>Unrecognized global option position</td>
+<td>Put <code>-o json</code> / <code>-v</code> before <code>query</code> or another top-level command.</td>
+</tr>
+<tr>
+<td>HTTP 401/403</td>
+<td>Check token API permissions and correct organization; do not share tokens.</td>
+</tr>
+<tr>
+<td>Webhook 404/401</td>
+<td>Check URL path / shared-secret signature respectively; see webhook tests.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-mistakes">Common mistakes</h2>
+<table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Better approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adding flags without deciding what the result should mean.</td>
+<td>Write the question first, then add one operation at a time.</td>
+</tr>
+<tr>
+<td>Using <code>--range 1h --resolution 16h</code> to compare a chart hover.</td>
+<td>Match chart resolution and keep buckets sensibly smaller than the range.</td>
+</tr>
+<tr>
+<td>Thinking <code>--agg sum</code> gives the total over the range.</td>
+<td>It sums series at each timestamp; time calculations are a different stage.</td>
+</tr>
+<tr>
+<td>Using <code>--rollup sum</code> to find current project size.</td>
+<td>A size is usually a gauge; inspect readings and match the chart's rollup.</td>
+</tr>
+<tr>
+<td>Treating a moving sum of gauge readings as transferred bytes.</td>
+<td>Use the appropriate transfer/counter metric and supported counter semantics.</td>
+</tr>
+<tr>
+<td>Thinking <code>--latest</code> means raw source sample or maximum.</td>
+<td>It selects the latest non-null returned output point after all calculations.</td>
+</tr>
+<tr>
+<td>Treating <code>environment</code> as an alias of <code>deployment.environment.name</code>.</td>
+<td>Use the literal keys present on the desired series.</td>
+</tr>
+<tr>
+<td>Applying byte units to counts or already-converted KiB.</td>
+<td>Check source and result units first.</td>
+</tr>
+<tr>
+<td>Running <code>--dry-run</code> and expecting datapoints.</td>
+<td>Dry-run only prints generated SignalFlow.</td>
+</tr>
+<tr>
+<td>Expecting local webhook <code>send-test</code> to validate Splunk delivery.</td>
+<td>Test local, public tunnel, and Splunk integration separately.</td>
+</tr>
+</tbody>
+</table>
+<p>For module ownership and implementation flows, see <a href="../architecture/">Architecture</a>.
+For environment variables, deployment/security considerations, and cURL examples,
+see the <a href="../reference/">User Reference</a>. Return to the <a href="../README.md">README</a> for the quick start.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
