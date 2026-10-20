@@ -23,7 +23,7 @@ jobs:
 
       - name: Install documentation dependencies
         run: |
-          pip install "mkdocstrings>=1.0.7" mkdocstrings-python mkdocs-material mkdocs-include-markdown-plugin
+          pip install "pymdown-extensions<12.2" mkdocs-material mkdocstrings mkdocstrings-python mkdocs-include-markdown-plugin
 
       - name: Configure Git Identity for GitHub Pages
         run: |
