@@ -1,0 +1,22 @@
+site_name: sfx-olly
+site_url: https://asksmruti.github.io/sfx-olly/
+repo_url: https://github.com/asksmruti/sfx-olly
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - content.code.copy
+
+plugins:
+  - search
+  - include-markdown
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - API Reference: api.md
