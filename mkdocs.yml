@@ -19,4 +19,7 @@ plugins:
 
 nav:
   - Home: index.md
+  - Architecture: architecture.md
+  - Command Guide: command-guide.md
   - API Reference: api.md
+  - Reference: reference.md
